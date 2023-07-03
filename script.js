@@ -1,5 +1,5 @@
 async function getlinks(){
-    const links = await fetch('\elemetns\links.json')
+    const links = await fetch('/elemetns/links.json')
     const data = await links.json()
 
     const socalsele = document.getElementById("socials").children
