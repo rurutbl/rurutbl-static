@@ -71,13 +71,18 @@ body > header > div > div > img:hover {
 
 /* Description */
 description {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+description > links, description > about {
   margin: 10px;
-  min-width: min-content;
-  max-width: min(340px, 98vw);
+  min-width: min(340px, 90vw);
   box-shadow: 0px 0px 4px black;
   display: block;
   border-radius: 5px;
   background: #111;
+  height: fit-content;
 }
 
 links > h3 {
@@ -89,4 +94,67 @@ links > h3::before {
   content: "\e157";
   font-family: "Material Symbols Outlined";
   padding: 5px;
+}
+
+links > div {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+links > div:hover {
+  background: #333;
+  cursor: pointer;
+}
+
+links > div > img {
+  width: 32px;
+  margin: 12px;
+  box-shadow: white 0px 0px 12px;
+  background: white;
+}
+
+links > div > span {
+  color: white;
+  text-decoration: underline dashed 1px orange;
+}
+
+
+about > h3 {
+  display: flex;
+  align-items: center;
+}
+
+about > h3::before {
+  content: "\e853";
+  font-family: "Material Symbols Outlined";
+  padding: 5px;
+}
+
+about > p {
+  margin: 5px;
+  padding: 12px;
+}
+
+about > ul > li::marker {
+  content: ""
+}
+about > ul > li {
+  display: flex;
+  align-items: center;
+}
+about > ul {
+  padding: 12px;
+}
+
+.span-g{
+  color: #999999;
+}
+
+footer {
+  background: #111;
+  position: fixed;
+  width: 100vw;
+  left: 0px;
+  bottom: 0;
 }

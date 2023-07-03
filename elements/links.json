@@ -1,3 +1,10 @@
 {
-    "Ai thing": "https://colab.research.google.com/drive/1Oj-A6fO2tUU4NM-qjjFkxfkBwSI9GHMl?authuser=1"
-}
+    "Ai thing": {
+        "url": "https://colab.research.google.com/drive/1Oj-A6fO2tUU4NM-qjjFkxfkBwSI9GHMl",
+        "icon": "https://colab.research.google.com/img/colab_favicon.ico"
+    },
+    "Discord server": {
+        "url": "https://discord.gg/nagqxmF7an",
+        "icon": "/assets/2c21aeda16de354ba5334551a883b481.png"    
+    }
+    }
