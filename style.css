@@ -1,0 +1,85 @@
+body {
+  background: #212529;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+/* header */
+header {
+  display: flex;
+  overflow: hidden;
+  justify-items: center;
+  padding: min(8vw, 59px);
+  align-items: center;
+}
+
+header > img {
+  border-radius: 100%;
+  width: 40vw;
+  min-width: 100px;
+  max-width: 10pc;
+  height: auto;
+}
+
+header > div > h2 {
+  font-size: min(5vh, 45px);
+  margin: 0;
+  margin: 0px 10px;
+}
+
+header > div > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* info */
+info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+}
+
+info > span:nth-child(1) {
+  color: #999999;
+  font-size: min(max(24px, 19vw), 23px);
+}
+info > span:nth-child(2) {
+  font-size: min(14px, 15px);
+}
+info > span:nth-child(1)::after {
+  content: ": ";
+}
+
+/* Socal-Links */
+body > header > div > div > img {
+  filter: grayscale() invert() brightness(2);
+  width: min(16px, 10vw);
+  padding: 4px;
+  transition: 0.5s;
+}
+
+body > header > div > div > img:hover {
+  filter: none;
+  transition: 0.5s;
+}
+
+/* Description */
+description {
+  margin: 10px;
+  min-width: min-content;
+  max-width: min(340px, 98vw);
+  box-shadow: 0px 0px 4px black;
+  display: block;
+  border-radius: 5px;
+  background: #111;
+}
+
+links > h3 {
+  display: flex;
+  align-items: center;
+}
+
+links > h3::before {
+  content: "\e157";
+  font-family: "Material Symbols Outlined";
+  padding: 5px;
+}
