@@ -19,7 +19,7 @@
         "1150": "Geography",
         "1225": "English",
         "1335": "Litreture",
-        "1410": "Dhuhr",
+        "1410": "Break",
         "1500": "CCA",
         "1507": null
     },
@@ -30,7 +30,9 @@
         "1055": "Recess",
         "1130": "Math",
         "1240": "MTL",
-        "1350": null
+        "1350": "Break",
+        "1530": "Math LSP",
+        "1630": null
     },
     "Thursday": {
         "800": "CCE",
