@@ -46,7 +46,7 @@ async function getTime(){
     var hours = utcPlus8Time.getUTCHours();
     var minutes = utcPlus8Time.getUTCMinutes();
 
-    if (hours - 12 < 12){
+    if (hours - 12 > 0){
         hours = hours - 12
         m = "PM"
     }else{
