@@ -1,0 +1,191 @@
+body {
+  background: #333;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+#track,
+#btime {
+  background-color: #222;
+  box-shadow: inset 0px 11px 12px rgb(0 0 0 / 27%);
+  width: inherit;
+  padding: 24px 0px;
+  margin: 15px 0px;
+  border-radius: 15px;
+}
+
+#track > li {
+  border: #222;
+  padding: 10px;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  background: #333;
+  border-radius: 12px;
+}
+
+#track > li::marker {
+  content: none;
+}
+
+.current {
+  background: #0000005c;
+}
+
+body > h1 {
+  text-align: center;
+}
+
+.progress-bar-container {
+  max-height: 300px;
+  max-width: 300px;
+  height: 85vw;
+  width: 85vw;
+  margin: 21px;
+}
+
+.progress-bar {
+  background: radial-gradient(closest-side, #333 92%, transparent 80% 100%),
+    conic-gradient(rgb(255, 255, 255) calc(var(--prog) * 1%), grey 0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-bar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.active {
+  outline: white 1px solid;
+}
+
+.fullttdiv {
+  display: flex;
+  padding: 5px 10px;
+  margin: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+.fullttdiv > div {
+  background-color: #222;
+  width: 100%;
+  border-radius: 15px;
+  padding: 24px 0px;
+}
+.fullttbtn {
+  border-radius: 15px;
+  border: none;
+  color: white;
+  background-color: #222;
+  width: fit-content;
+}
+
+.pill-selector {
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+}
+
+.pill-selector > button {
+  width: 60px;
+  padding: 5px;
+  background: #333;
+  color: white;
+  border: none;
+}
+
+.pill-selector > button:hover {
+  background: #535353;
+}
+
+.pill-selector > button:nth-child(1) {
+  border-right: white solid 1px;
+}
+#btime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active-pill {
+  background: #111 !important;
+}
+
+.timings {
+  width: inherit;
+}
+.timings > div {
+  width: calc(100% - 60px);
+  padding: 20px;
+  background-color: #333;
+  margin: 0px 10px;
+  border-top: grey solid 1px;
+  display: inline-flex;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+.timings > div::before {
+  content: "<";
+  margin: 0px 10px;
+  rotate: -90deg;
+  transition: 0.1s;
+}
+.show::before {
+  rotate: 90deg !important;
+}
+
+.show > div:nth-child(2) {
+  display: block;
+}
+
+.timings > div > div:nth-child(1) > span{
+  width: 100% !important;
+}
+
+.bustiming {
+  width: 100%;
+  cursor: default;
+  border-top: #00000055 1px solid;
+  margin-top: 20px;
+}
+
+.bustiming > div{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bustiming  {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: calc(100% - 60px);
+}
+
+td, th {
+  text-align: center;
+  padding: 8px;
+}
+
+td{
+      font-size: 0.7em;
+    color: #ffffffaa;
+}

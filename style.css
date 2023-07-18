@@ -65,6 +65,8 @@ body > header > div > div > img {
 }
 
 body > header > div > div > img:hover {
+  width: 30px;
+  height: 16px;
   filter: none;
   transition: 0.5s;
 }
@@ -72,6 +74,7 @@ body > header > div > div > img:hover {
 /* Description */
 description {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -142,6 +145,7 @@ about > ul > li::marker {
 about > ul > li {
   display: flex;
   align-items: center;
+  padding: 6px 0px;
 }
 about > ul {
   padding: 12px;

@@ -1,0 +1,55 @@
+{
+    "Monday": {
+        "800": "CCE",
+        "855": "PE",
+        "1005": "English",
+        "1055": "Recess",
+        "1130": "MTL",
+        "1225": "D&T",
+        "1315": "Math, -SBB",
+        "1350": "Break",
+        "1410": "Science, SBB",
+        "1445": null
+    },
+    "Tuesday": {
+        "800": "D&T",
+        "910": "Art",
+        "1020": "Recess",
+        "1055": "Science",
+        "1150": "Geography",
+        "1225": "English",
+        "1335": "Litreture",
+        "1410": "Dhuhr",
+        "1500": "CCA",
+        "1507": null
+    },
+    "Wednesday": {
+        "830": "CCE",
+        "930": "English",
+        "1020": "Litreture",
+        "1055": "Recess",
+        "1130": "Math",
+        "1240": "MTL",
+        "1350": null
+    },
+    "Thursday": {
+        "800": "CCE",
+        "835": "Math",
+        "930": "Science",
+        "1040": "PE",
+        "1130": "Recess",
+        "1205": "History",
+        "1300": "Music",
+        "1410": null
+    },
+    "Friday": {
+        "730": "English",
+        "835": "Math",
+        "930": "MTL",
+        "1020": "",
+        "1040": "Science",
+        "1130": "Geography",
+        "1205": "History",
+        "1240": null
+    }
+}

@@ -1,5 +1,5 @@
 async function getsocals(){
-    const links = await fetch('/elements/socals.json')
+    const links = await fetch('https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/socals.json')
     const data = await links.json()
 
     const socalsele = document.getElementById("socals").children
@@ -10,7 +10,7 @@ async function getsocals(){
     }
 }
 async function getlinks() {
-    const links = await fetch('/elements/links.json')
+    const links = await fetch('https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/links.json')
     const data = await links.json()
 
     for (const title in data) {

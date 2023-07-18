@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1>Next Sub:</h1> -->
+    <div class="progress-bar-container">
+        <div class="progress-bar">
+            <div>
+                <span id="timetil">Time until: @@@@</span>
+                <span id="timetilval">0:00:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="fullttdiv">
+        <button class="fullttbtn" onclick="window.open('./assets/full.pdf')">View Full Timetable</button>
+    </div>
+    <ul id="track">
+    </ul>
+    <div id="btime">
+        <div class="pill-selector">
+            <button onclick="reloadTiming('Go')" class="active-pill">Go</button>
+            <button onclick="reloadTiming('Return')" class="active-pill">Back</button>
+        </div>
+        <div class="timings">
+
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./busScript.js"></script>
+</body>
+
+</html>
