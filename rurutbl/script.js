@@ -1,4 +1,4 @@
-var _spoofTime = false
+var _spoofTime = null
 var tt = null
 
 function get24HourCode(_spoofTime) {
@@ -38,8 +38,32 @@ function load(lessonJson) {
         const subtime = document.createElement("div")
 
         subName.innerText = subject ? subject : "END"
-
         subtime.innerText = lsnStartTime
+        switch (subject) {
+            case "Math, -SBB":
+                subName.style.color = "grey"
+                subtime.style.color = "grey"
+                break;
+
+            case "Recess":
+                subName.style.color = "grey"
+                subtime.style.color = "grey"
+                break;
+
+            case "Break":
+                subName.style.color = "grey"
+                subtime.style.color = "grey"
+                break;
+
+            case null:
+                subName.style.color = "green"
+                subtime.style.color = "green"
+                break;
+
+            
+            default:
+                break;
+        }
 
         li.appendChild(subName)
         li.appendChild(subtime)
@@ -68,10 +92,13 @@ async function gettt() {
     }
 
     // Get Current Day
-    const day = currentDate.getDay() - 1 < 0 ? 0 : currentDate.getDay() - 1
-    const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday", "Monday"]
+    const day = currentDate.getDay()
+    const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
     const lessonJson = tt[dayName[day]]
 
+    console.log(tt[dayName[day]]);
+    console.log(weekNumber);
+    
 
     // Updates every seconds for:
     // - Circular Progress
@@ -94,22 +121,23 @@ async function gettt() {
             load(lessonJson)
         }
         lastRegLesson = curLessonInt;
+        if (curTime > parseInt(Object.keys(lessonJson)[Object.keys(lessonJson).length - 1])) {
+            const nextday = tt[dayName[currentDate.getDay() + 1]]
+            const reportTime = Object.keys(nextday)[0]
+            
+            document.getElementById("timetil").innerText = `Report Tmr at ${reportTime}`
+            document.getElementById("timetilval").innerText = `First lesson is ${nextday[reportTime]}`
+            document.getElementById("timenow").innerText = ""
+            load(nextday)
+            return
+        }
         if (curLessonInt == -Infinity) {
             load({})
             document.getElementById("timetil").innerText = `idk wait until monday`
             document.getElementById("timetilval").innerText = ``
             return
         }
-        if (curTime > parseInt(Object.keys(lessonJson)[Object.keys(lessonJson).length - 1])) {
-
-            const reportTime = Object.keys(nextday)[0]
-            
-            document.getElementById("timetil").innerText = `Report Tmr at ${reportTime}`
-            document.getElementById("timetilval").innerText = `First lesson is ${nextday[reportTime]}`
-            load(nextday)
-            return
-        }
-
+        
         inHours(curTime, curLessonInt)
     }, 1000)
 
@@ -132,8 +160,10 @@ async function gettt() {
 
         if (curTime < Object.keys(lessonJson)[0]) {
             document.getElementById("timetil").innerText = `Time until Start class (${lessonJson[Object.keys(lessonJson)[0]]})`
+            document.getElementById("timenow").innerText = ""
         } else {
-            document.getElementById("timetil").innerText = `Time until ${lessonJson[curLessonInt]}`
+            document.getElementById("timetil").innerHTML = `Time until <b>${lessonJson[curLessonInt]}</b>`
+            document.getElementById("timenow").innerText = `${lessonJson[Object.keys(lessonJson)[Object.keys(lessonJson).indexOf(String(curLessonInt)) - 1]]}`
         }
 
         // Countdown
