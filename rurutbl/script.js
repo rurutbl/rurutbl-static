@@ -68,8 +68,8 @@ async function gettt() {
     }
 
     // Get Current Day
-    const day = currentDate.getDay() - 1
-    const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    const day = currentDate.getDay() - 1 < 0 ? 0 : currentDate.getDay() - 1
+    const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday", "Monday"]
     const lessonJson = tt[dayName[day]]
 
 
@@ -94,17 +94,16 @@ async function gettt() {
             load(lessonJson)
         }
         lastRegLesson = curLessonInt;
+        if (curLessonInt == -Infinity) {
+            load({})
+            document.getElementById("timetil").innerText = `idk wait until monday`
+            document.getElementById("timetilval").innerText = ``
+            return
+        }
         if (curTime > parseInt(Object.keys(lessonJson)[Object.keys(lessonJson).length - 1])) {
-            const nextday = tt[dayName[currentDate.getDay()]]
-
-            if (!nextday) {
-                load({})
-                document.getElementById("timetil").innerText = `idk wait until monday`
-                document.getElementById("timetilval").innerText = ``
-                return
-            }
 
             const reportTime = Object.keys(nextday)[0]
+            
             document.getElementById("timetil").innerText = `Report Tmr at ${reportTime}`
             document.getElementById("timetilval").innerText = `First lesson is ${nextday[reportTime]}`
             load(nextday)

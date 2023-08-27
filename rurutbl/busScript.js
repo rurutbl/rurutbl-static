@@ -1,5 +1,5 @@
 async function aaa (){
-    await fetch(`https://uniformlimeplots.felicity1l1.repl.co/`).catch()
+    await fetch(`https://uniformlimeplots.felicity1l1.repl.co/`).catch(e => {})
 
     if (!tt) {
         return aaa()

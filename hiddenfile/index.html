@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        (async () => {
+            function detectTime(lessonJson, time) {
+                let curLessonInt = -Infinity;
+                for (const strTime in lessonJson) {
+                    const intTime = parseInt(strTime);
+                    if (time < intTime && curLessonInt < intTime && curLessonInt == -Infinity) {
+                        curLessonInt = intTime;
+                    }
+                }
+
+                return lessonJson[curLessonInt];
+            }
+            const times = [
+                "0000", "0730", "0800", "0820", "0835", "0855", "0910", "0930", "0945", "1005", "1020", "1040", "1055", "1115", "1130", "1150", "1205", "1225", "1240", "1300", "1315", "1335", "1350", "1410", "1425", "1445", "1500", "1520", "1540", "1555", "1615", "1630", "1650", "1700"
+            ];
+
+            tt = await fetch("https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/odd.json")
+            tt = await tt.json()
+            var table = document.createElement("table");
+
+            var Timetr = document.createElement("tr");
+            times.forEach((t) => {
+                const th = document.createElement("th");
+                th.innerHTML = t.slice(0, 2) + ":" + t.slice(2);;
+                Timetr.appendChild(th);
+            })
+
+            table.appendChild(Timetr);
+            Object.keys(tt).forEach((d) => {
+                var tr = document.createElement("tr");
+                var lastEntryName = null;
+                var lastEntry = null;
+                times.forEach((t) => {
+                    const th = document.createElement("th");
+
+                    if (t.split("")[0] == "0") {
+                        t = t.split("")
+                        t.shift()
+                        t = t.join("")
+                    }
+                    const val = t == "000" ? d : tt[d][t]
+                    console.log(tt[d][t], t);
+                    if (!val) {
+                        if (lastEntry) {
+                            console.log(parseInt(lastEntry.getAttribute("colspan")));
+                            lastEntry.setAttribute("colspan", parseInt(lastEntry.getAttribute("colspan")) ? parseInt(lastEntry.getAttribute("colspan")) + 1 : 2)
+                            return
+                        }
+                    }
+
+                    th.innerHTML = val ? val : ""
+                    lastEntry = th
+                    lastEntryName = val;
+                    tr.appendChild(th);
+                })
+
+                table.appendChild(tr);
+            })
+
+
+            document.body.appendChild(table);
+        })()
+
+    </script>
+</body>
+
+</html>
