@@ -77,7 +77,7 @@ async function gettt() {
     var curTime = get24HourCode(_spoofTime)
 
     // Get Week
-    const semstart = new Date('2023-06-25');
+    const semstart = new Date('2023-09-11');
     const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
     const timeDifference = currentDate.getTime() - semstart.getTime();
     const weekNumber = Math.ceil(timeDifference / millisecondsPerWeek);
