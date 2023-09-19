@@ -20,9 +20,7 @@
         "1115": "Science",
         "1225": "English",
         "1315": "Math",
-        "1410": "Break",
-        "1500": "CCA",
-        "1700": null
+        "1410": null
     },
     "Wednesday": {
         "830": "CCE",
@@ -33,9 +31,7 @@
         "1240": "Break",
         "1300": "Geography",
         "1335": "Science",
-        "1425": "Break",
-        "1530": "Math LSP",
-        "1630": null
+        "1425": null
     },
     "Thursday": {
         "800": "CCE",
