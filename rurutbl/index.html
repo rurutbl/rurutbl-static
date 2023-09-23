@@ -10,8 +10,47 @@
 </head>
 
 <body>
-    <!-- <h1>Next Sub:</h1> -->
-    <div class="progress-bar-container">
+    <!-- Loading -->
+    <div class="progress-bar-container" id="pbskel">
+        <div class="progress-bar">
+            <div>
+                <span id="timenow" class="px40"></span>
+                <span id="timetil" class="px40" style="width: 90px;"></span>
+                <span id="timetilval" class="px40"></span>
+            </div>
+        </div>
+        <div class="fullttdiv">
+            <button class="fullttbtn" onclick="window.open('/assets/full.pdf')">View Full Timetable</button>
+        </div>
+    </div>
+    <ul id="trackSkeliton" style="display: block;">
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+    </ul>
+    <!-- Main Site -->
+    <div class="progress-bar-container" style="display: none;" id="pb">
         <div class="progress-bar">
             <div>
                 <span id="timenow">@@@@</span>
@@ -21,14 +60,12 @@
         </div>
         <div class="fullttdiv">
             <button class="fullttbtn" onclick="window.open('/assets/full.pdf')">View Full Timetable</button>
-            <!-- <button class="fullttbtn" onclick="window.open('/assets/full.pdf')">
-                <img src="https://www.gstatic.com/classroom/logo_square_rounded.svg" alt="logo_square_rounded.svg">
-                Open Subject Google classroom
-            </button> -->
         </div>
+        <div id="devinfo"></div>
     </div>
-    <ul id="track">
+    <ul id="track" style="display: none;">
     </ul>
+    <!-- Some Script -->
     <script src="./script.js"></script>
 </body>
 

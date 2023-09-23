@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 
-<body>  
-    <div class="progress-bar-container">
+<body> 
+    <div class="progress-bar-container" id="pbskel">
         <div class="progress-bar">
             <div>
                 <span id="timenow">@@@@</span>
@@ -19,8 +19,20 @@
             </div>
         </div>
     </div>
-    <ul id="track">
+    <ul id="trackSkeliton" style="display: block;" >
     </ul>
+    <div id="pb" class="progress-bar-container" style="display: none;" >
+        <div class="progress-bar">
+            <div>
+                <span id="timenow">@@@@</span>
+                <span id="timetil">Time until: @@@@</span>
+                <span id="timetilval">0:00:00</span>
+            </div>
+        </div>
+    </div>
+    <ul id="track" style="display: none;">
+    </ul>
+    <div id="devinfo"></div>
     <script src="/rurutbl/script.js"></script>
 </body>
 

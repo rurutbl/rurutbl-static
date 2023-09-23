@@ -1,8 +1,9 @@
-var _spoofTime = null
+// var _spoofDay = "9/25/2023 12:00:00"
+var _spoofDay   
 var tt = null
 
-function get24HourCode(_spoofTime) {
-    var currentDate = new Date();
+function get24HourCode() {
+    var currentDate = _spoofDay ? new Date(_spoofDay) : new Date() 
     var hours = currentDate.getHours();
     var minutes = currentDate.getMinutes();
 
@@ -13,7 +14,7 @@ function get24HourCode(_spoofTime) {
     // Concatenate hours and minutes
     var code = formattedHours + formattedMinutes;
 
-    return _spoofTime ? _spoofTime : parseInt(code);
+    return parseInt(code);
 }
 
 function convert24Hour(t24) {
@@ -26,8 +27,13 @@ function convert24Hour(t24) {
     }
     return { "hours": hours, "minutes": minutes }
 }
-
+var once1 = false
 function load(lessonJson) {
+    if (!once1) {
+        document.getElementById("trackSkeliton").remove()
+        document.getElementById("track").style.display = "block"
+        once1 = true
+    }
     document.getElementById("track").innerHTML = ""
     for (var lsnStartTime in lessonJson) {
         const subject = lessonJson[lsnStartTime];
@@ -60,7 +66,7 @@ function load(lessonJson) {
                 subtime.style.color = "green"
                 break;
 
-            
+
             default:
                 break;
         }
@@ -73,8 +79,8 @@ function load(lessonJson) {
 
 async function gettt() {
     var lastRegLesson = null
-    var currentDate = new Date()
-    var curTime = get24HourCode(_spoofTime)
+    var currentDate = _spoofDay ? new Date(_spoofDay) : new Date() 
+    var curTime = get24HourCode()
 
     // Get Week
     const semstart = new Date('2023-09-11');
@@ -98,14 +104,15 @@ async function gettt() {
 
     console.log(tt[dayName[day]]);
     console.log(weekNumber);
-    
+
 
     // Updates every seconds for:
     // - Circular Progress
     // - Countdown
+    var once = false
     setInterval(() => {
-        currentDate = new Date();
-        curTime = get24HourCode(_spoofTime)
+        currentDate = _spoofDay ? new Date(_spoofDay) : new Date() 
+        curTime = get24HourCode()
 
         //  Get Current Lesson
         let curLessonInt = -Infinity;
@@ -120,11 +127,23 @@ async function gettt() {
         if (curLessonInt !== lastRegLesson) {
             load(lessonJson)
         }
+
+        if (!once) {
+            document.getElementById("pbskel").remove()
+            document.getElementById("pb").style.display = "block"
+            once = true
+        }
+        document.getElementById("devinfo").innerHTML = 
+        `Dev </br>
+        Date: ${currentDate} </br>
+        PredictedDay: ${dayName[currentDate.getDay()]} (i: ${currentDate.getDay()}) </br>
+        PredictedSubj: ${lessonJson[curLessonInt] ? lessonJson[curLessonInt] : "-"}`
         lastRegLesson = curLessonInt;
         if (curTime > parseInt(Object.keys(lessonJson)[Object.keys(lessonJson).length - 1])) {
-            const nextday = tt[dayName[currentDate.getDay() + 1]]
+            var nextday = tt[dayName[currentDate.getDay() + 1]]
+            nextday = nextday ? nextday : tt[dayName[0]]
             const reportTime = Object.keys(nextday)[0]
-            
+
             document.getElementById("timetil").innerText = `Report Tmr at ${reportTime}`
             document.getElementById("timetilval").innerText = `First lesson is ${nextday[reportTime]}`
             document.getElementById("timenow").innerText = ""
@@ -137,7 +156,6 @@ async function gettt() {
             document.getElementById("timetilval").innerText = ``
             return
         }
-        
         inHours(curTime, curLessonInt)
     }, 1000)
 
@@ -171,7 +189,7 @@ async function gettt() {
         var min = minutesLeft.toString().padStart(2, "0") - 1
         min = String(min).length == 1 ? "0" + min : min// Mins
         min = min == -1 ? "0" : min
-        var sec = 60 - new Date().getSeconds()
+        var sec = 60 - _spoofDay ? new Date(_spoofDay).getSeconds() : new Date().getSeconds()
         sec = String(sec).length == 1 ? "0" + sec : sec// Seconds
 
         document.getElementById("timetilval").innerText = `${hr}:${min}:${sec}`

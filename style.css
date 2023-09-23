@@ -1,6 +1,11 @@
+:root {
+  --background-dark: #212529;
+  --color-dark: white;
+}
+
 body {
-  background: #212529;
-  color: white;
+  background: var(--background-dark);
+  color: var(--color-dark);
   font-family: "Roboto", sans-serif;
 }
 /* header */
@@ -38,6 +43,29 @@ body > header > div > h2 > span {
   font-size: 2vh;
   margin: 0px 10px;
 }
+
+@font-face {
+    font-family: s1;
+    src: url("/assets/s1.ttf");
+}
+
+#greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#greeting > span {
+  font-family: s1;
+  background: white;
+  color: black;
+  font-weight: 600;
+  padding: 5px;
+  width: 62px;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 20px;
+}
 /* info */
 info {
   display: flex;
@@ -58,27 +86,28 @@ info > span:nth-child(1)::after {
 
 /* Socal-Links */
 body > header > div > div > img {
-  filter: grayscale() invert() brightness(2);
   width: min(16px, 10vw);
   padding: 4px;
+  margin: 4px;
   transition: 0.5s;
+  background-color: #333;
+  border-radius: 15%;
 }
 
 body > header > div > div > img:hover {
-  width: 30px;
-  height: 16px;
-  filter: none;
   transition: 0.5s;
+  padding-right: 50px;
 }
 
 /* Description */
 description {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-description > links, description > about {
+description > links,
+description > about {
   margin: 10px;
   min-width: min(340px, 90vw);
   box-shadow: 0px 0px 4px black;
@@ -122,7 +151,6 @@ links > div > span {
   text-decoration: underline dashed 1px orange;
 }
 
-
 about > h3 {
   display: flex;
   align-items: center;
@@ -140,7 +168,7 @@ about > p {
 }
 
 about > ul > li::marker {
-  content: ""
+  content: "";
 }
 about > ul > li {
   display: flex;
@@ -151,7 +179,7 @@ about > ul {
   padding: 12px;
 }
 
-.span-g{
+.span-g {
   color: #999999;
 }
 

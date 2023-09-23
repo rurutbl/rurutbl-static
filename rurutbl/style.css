@@ -11,6 +11,7 @@ body {
 }
 
 #track,
+#trackSkeliton,
 #btime {
   padding: 24px 0px;
   margin: 15px 0px;
@@ -18,7 +19,7 @@ body {
   min-width: min(600px, 100vw);
 }
 
-#track > li {
+#track > li, #trackSkeliton > li {
   border: #555 solid 1px;
   padding: 10px;
   margin: 10px 20px;
@@ -27,7 +28,7 @@ body {
   border-radius: 12px;
 }
 
-#track > li::marker {
+#track > li::marker, #trackSkeliton > li::marker {
   content: none;
 }
 
@@ -192,4 +193,10 @@ td, th {
 td{
       font-size: 0.7em;
     color: #ffffffaa;
+}
+
+.px40{
+  width: 40px;
+  height: 19px;
+  background-color: #333;
 }
