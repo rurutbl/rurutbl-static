@@ -45,8 +45,8 @@ body > header > div > h2 > span {
 }
 
 @font-face {
-    font-family: s1;
-    src: url("/assets/s1.ttf");
+  font-family: s1;
+  src: url("/assets/s1.ttf");
 }
 
 #greeting {

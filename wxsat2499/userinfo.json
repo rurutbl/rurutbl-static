@@ -1,0 +1,134 @@
+{
+    "🏳‍⚧Lulu": {
+        "name": "Lulu (Owner)",
+        "quote": "I want to make people smile, is that ok?",
+        "sekai": [
+            {
+                "name": "Mizuki",
+                "color": "#E4A8CA"
+            },
+            {
+                "name": "Emu",
+                "color": "#FF66BC"
+            }
+        ],
+        "birthday": "March 28",
+        "moreInfo": [
+            "😎 Mentalli ill",
+            "🏳‍⚧ Transfeminine",
+            "♈ Aries",
+            "🍌 give me estrogen",
+            "🚃 Creator of 2499(not leader)",
+            "😺 JavaScript coder (I coded this Website)",
+            "🌚 Introvert /alone",
+            "<a href=\"/\">Go to my site (home)</a>"
+        ],
+        "assets": [
+            "./assets/769DKAS.png",
+            "./assets/rndimages/pmol.jpg"
+        ]
+    },
+    "👑Kayla": {
+        "name": "Kayla (Leader/Nightcord)",
+        "quote": "I have to keep composing, and doing whatever I can. I don't want to feel nervous anymore",
+        "sekai": [
+            {
+                "name": "Kanade",
+                "color": "#BB6588"
+            },
+            {
+                "name": "Nene",
+                "color": "#34DD9A"
+            }
+        ],
+        "birthday": "October 29",
+        "moreInfo": [
+            "🎧 Loves music",
+            "♏ Scorpio",
+            "😍 Mentalli ill 2",
+            "👩‍💻 Leader 1",
+            "😊 No talents",
+            "🫶 Introverted",
+            "🍵 Green tea."
+        ],
+        "assets": [
+            "./assets/NZHAM1X.png",
+            "./assets/rndimages/kana.jpg"
+        ]
+    },
+    "👑Blue": {
+        "name": "Blue (Leader/WxS)",
+        "quote": "If my looks and talent isn't worth anything, I'll use my voice to make an impact in the world!",
+        "sekai": [
+            {
+                "name": "Ena",
+                "color": "#CCAA87"
+            },
+            {
+                "name": "Tsukasa",
+                "color": "#FFBB00"
+            }
+        ],
+        "birthday": "August 28",
+        "moreInfo": [
+            "😎most sane pjsk player!!",
+            "♌Leo",
+            "🎸Guitarist",
+            "🎵Loves Music",
+            "⭐Am Tsook‼",
+            "😁Extroverted",
+            "⭐Am Tsook‼"
+        ],
+        "assets": [
+            "./assets/MGTQOQT.png"
+        ]
+    },
+    "🏳‍⚧Michael": {
+        "name": "Michael / Ari / Chael",
+        "quote": "Now, I can't understand anything anymore. It's time to see what kind of a story is waiting for us.",
+        "sekai": [
+            {
+                "name": "Mafuyu",
+                "color": "#8889CC"
+            },
+            {
+                "name": "Rui",
+                "color": "#BB88ED"
+            }
+        ],
+        "birthday": "March 25",
+        "moreInfo": [
+            "🎨 Artist",
+            "📝 Writer",
+            "🏳‍⚧ Transmasculine",
+            "💜 Introverted",
+            "🐈 Cat lover",
+            "♈ Aries"
+        ],
+        "assets": [
+            "./assets/WhatsApp Image 2023-11-05 at 21.28.21_036e8f81.jpg",
+            "./assets/rndimages/cheal.jpg"
+        ]
+    },
+    "Name": {
+        "name": "Name2",
+        "quote": "quote",
+        "sekai": [
+            {
+                "name": "sekai",
+                "color": "#000"
+            },
+            {
+                "name": "sekai2",
+                "color": "#000"
+            }
+        ],
+        "birthday": "birthday",
+        "moreInfo": [
+            "moreInfo"
+        ],
+        "assets": [
+            "./assets/Untitled.png"
+        ]
+    }
+}
