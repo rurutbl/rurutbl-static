@@ -1,13 +1,13 @@
-.material-symbols-outlined {
-  font-size: 3pc;
+html {
+  scroll-behavior: smooth;
 }
 
-a{
-    color: #aaa
+a {
+  color: #aaa;
 }
 
-li{
-    list-style-type:none
+li {
+  list-style-type: none;
 }
 
 body {
@@ -17,10 +17,8 @@ body {
   overflow-x: hidden;
 }
 
-span,
-a,
-div {
-  font-size: 2pc;
+f {
+  font-size: 1.5rem;
 }
 .prof {
   display: flex;
@@ -50,10 +48,20 @@ div {
   width: 100vw;
 }
 
+@keyframes slide {
+  from {
+    top: -600px;
+  }
+
+  to {
+    top: 0px;
+  }
+}
 .prof > fg > img {
   width: 300px;
   animation-name: slide;
   animation-duration: 1s;
+  position: relative;
 }
 
 .prof > div {
@@ -68,7 +76,7 @@ div {
   justify-content: center;
 }
 
-#socals > img {
+#socals > a > img {
   width: 20px;
   padding: 4px;
   margin: 4px;
@@ -76,7 +84,7 @@ div {
   background-color: #fff;
   border-radius: 100px;
 }
-#socals {
+#socals, #socals > a {
   display: flex;
   justify-content: center;
 }
@@ -125,7 +133,7 @@ cont > h3 {
 }
 
 .bigq {
-  font-size: 55px;
+  font-size: 35px;
   font-family: fantasy;
 }
 
@@ -146,26 +154,24 @@ cont > h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .charSelectContainer > div > div {
   padding: 10px;
   margin: 10px;
   background-color: white;
-  width: min(700px, 100%);
+  width: min(400px,90vw);
   border-radius: 25px;
 }
-.charSelectContainer > div {
-  width: 600px;
-}
-.charSelectContainer > div:nth-child(2) > img{
- width: 300px;
- margin: 20px;
+.charSelectContainer > div:nth-child(2) > img {
+  width: 300px;
+  margin: 20px;
 }
 
-.charSelectContainer > div:nth-child(2){
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.charSelectContainer > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 @media (max-width: 1000px) {
   .prof > fg > img {
@@ -175,14 +181,21 @@ cont > h3 {
     width: 7vw;
   }
   .charSelectContainer {
-    padding-left: 10px;
+    padding: 0px;
+  }
+  .charSelectContainer > div > div{
+    margin: 10px 0;
   }
 }
 
-.selected{
-    background-color: white !important;
+.selected {
+  background-color: white !important;
 }
-.title{
-    text-align: center;
-    width: 600px;
+.title {
+  text-align: center;
+  width: 100%;
+}
+footer{
+  background: #b3fffd;
+  padding: 10px 130px;
 }

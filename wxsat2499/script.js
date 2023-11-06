@@ -1,5 +1,5 @@
 (async () => {
-    let response = await fetch("http://localhost:3000/wxsat2499/userinfo.json");
+    let response = await fetch("/wxsat2499/userinfo.json");
     let data = await response.json();
 
     const buttonplace = document.querySelector("#mem > div.charSelect")
