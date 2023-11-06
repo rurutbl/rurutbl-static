@@ -84,7 +84,8 @@ f {
   background-color: #fff;
   border-radius: 100px;
 }
-#socals, #socals > a {
+#socals,
+#socals > a {
   display: flex;
   justify-content: center;
 }
@@ -112,7 +113,8 @@ f {
   text-align: center;
   width: 100vw;
   font-size: 4pc;
-  color: #ff88d4;
+  color: #444466;
+  background: linear-gradient(-80deg, #ff60c6, transparent);
 }
 cont {
   margin: 10px;
@@ -160,7 +162,7 @@ cont > h3 {
   padding: 10px;
   margin: 10px;
   background-color: white;
-  width: min(400px,90vw);
+  width: min(400px, 90vw);
   border-radius: 25px;
 }
 .charSelectContainer > div:nth-child(2) > img {
@@ -183,7 +185,7 @@ cont > h3 {
   .charSelectContainer {
     padding: 0px;
   }
-  .charSelectContainer > div > div{
+  .charSelectContainer > div > div {
     margin: 10px 0;
   }
 }
@@ -195,7 +197,7 @@ cont > h3 {
   text-align: center;
   width: 100%;
 }
-footer{
+footer {
   background: #b3fffd;
   padding: 10px 130px;
 }
