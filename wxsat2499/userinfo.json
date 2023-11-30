@@ -109,26 +109,5 @@
             "./assets/WhatsApp Image 2023-11-05 at 21.28.21_036e8f81.jpg",
             "./assets/rndimages/cheal.jpg"
         ]
-    },
-    "Name": {
-        "name": "Name2",
-        "quote": "quote",
-        "sekai": [
-            {
-                "name": "sekai",
-                "color": "#000"
-            },
-            {
-                "name": "sekai2",
-                "color": "#000"
-            }
-        ],
-        "birthday": "birthday",
-        "moreInfo": [
-            "moreInfo"
-        ],
-        "assets": [
-            "./assets/Untitled.png"
-        ]
     }
 }
