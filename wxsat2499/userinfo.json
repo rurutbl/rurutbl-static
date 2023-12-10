@@ -1,33 +1,4 @@
 {
-    "🏳‍⚧Lulu": {
-        "name": "Lulu (Owner)",
-        "quote": "I want to make people smile, is that ok?",
-        "sekai": [
-            {
-                "name": "Mizuki",
-                "color": "#E4A8CA"
-            },
-            {
-                "name": "Emu",
-                "color": "#FF66BC"
-            }
-        ],
-        "birthday": "March 28",
-        "moreInfo": [
-            "😎 Mentalli ill",
-            "🏳‍⚧ Transfeminine",
-            "♈ Aries",
-            "🍌 give me estrogen",
-            "🚃 Creator of 2499(not leader)",
-            "😺 JavaScript coder (I coded this Website)",
-            "🌚 Introvert /alone",
-            "<a href=\"/\">Go to my site (home)</a>"
-        ],
-        "assets": [
-            "./assets/769DKAS.png",
-            "./assets/rndimages/pmol.jpg"
-        ]
-    },
     "👑Kayla": {
         "name": "Kayla (Leader/Nightcord)",
         "quote": "I have to keep composing, and doing whatever I can. I don't want to feel nervous anymore",
@@ -83,7 +54,7 @@
             "./assets/MGTQOQT.png"
         ]
     },
-    "🏳‍⚧Michael": {
+    "Michael": {
         "name": "Michael / Ari / Chael",
         "quote": "Now, I can't understand anything anymore. It's time to see what kind of a story is waiting for us.",
         "sekai": [
