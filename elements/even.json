@@ -1,57 +1,51 @@
 {
     "Monday": {
-        "800": "Im",
-        "855": "finally",
-        "1005": "free",
-        "1055": "from",
-        "1130": "this",
-        "1225": "torture",
-        "1315": "called",
-        "1350": "JYSS",
-        "1445": null
+        "1000": "Recess",
+        "1040": "MTL",
+        "1140": "Eng",
+        "1240": "BreakMon",
+        "1300": "PE",
+        "1400": "*Sci (Phy/Bio)",
+        "1500": "Null",
+        "0800": "CCE",
+        "0900": "Elect-AM/D&T/POA [3B/AB&4H]"
     },
     "Tuesday": {
-        "800": "Im",
-        "855": "finally",
-        "1005": "free",
-        "1055": "from",
-        "1130": "this",
-        "1225": "torture",
-        "1315": "called",
-        "1350": "JYSS",
-        "1445": null
+        "1040": "Eng",
+        "1120": "*Sci (Chem)",
+        "1220": "*Sci (Phy/Bio)",
+        "1320": "Math",
+        "1420": "Null",
+        "0800": "Elect-AM/D&T/POA [3B4B&4H]",
+        "0900": "Recess",
+        "0940": "MTL"
     },
     "Wednesday": {
-        "800": "Im",
-        "855": "finally",
-        "1005": "free",
-        "1055": "from",
-        "1130": "this",
-        "1225": "torture",
-        "1315": "called",
-        "1350": "JYSS",
-        "1445": null
+        "1020": "MTL",
+        "1100": "Recess",
+        "1140": "Comb Hum",
+        "1220": "Math",
+        "1320": "Eng",
+        "1420": "Null",
+        "0840": "CCE",
+        "0940": "Comb.SS"
     },
     "Thursday": {
-        "800": "Im",
-        "855": "finally",
-        "1005": "free",
-        "1055": "from",
-        "1130": "this",
-        "1225": "torture",
-        "1315": "called",
-        "1350": "JYSS",
-        "1445": null
+        "1040": "Recess",
+        "1120": "Math",
+        "1220": "PE",
+        "1320": "Comb Hum",
+        "1420": "Null",
+        "0800": "CCE",
+        "0840": "*Sci (Chem)",
+        "0940": "Comb.SS"
     },
     "Friday": {
-        "800": "Im",
-        "855": "finally",
-        "1005": "free",
-        "1055": "from",
-        "1130": "this",
-        "1225": "torture",
-        "1315": "called",
-        "1350": "JYSS",
-        "1445": null
+        "1020": "Eng",
+        "1100": "Recess",
+        "1140": "Math",
+        "1220": "Null",
+        "0840": "Elect-AM/D&T/POA [3B/4B&4H]",
+        "0940": "MTL"
     }
 }
