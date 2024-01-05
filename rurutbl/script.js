@@ -1,101 +1,22 @@
 // var _spoofDay = "9/25/2023 12:00:00"
-var _spoofDay   
+var _spoofDay
 var tt = null
 
-function get24HourCode() {
-    var currentDate = _spoofDay ? new Date(_spoofDay) : new Date() 
-    var hours = currentDate.getHours();
-    var minutes = currentDate.getMinutes();
-
-    // Format hours and minutes as two digits
-    var formattedHours = ("0" + hours).slice(-2);
-    var formattedMinutes = ("0" + minutes).slice(-2);
-
-    // Concatenate hours and minutes
-    var code = formattedHours + formattedMinutes;
-
-    return parseInt(code);
-}
-
-function convert24Hour(t24) {
-    const curTimeLengh = String(t24).length == 3 ? 1 : 2
-    const hours = parseInt(String(t24).substring(0, curTimeLengh), 10)
-    const minutes = parseInt(String(t24).substring(curTimeLengh), 10)
-
-    if (t24 < 100) {
-        return { "hours": 0, "minutes": hours }
-    }
-    return { "hours": hours, "minutes": minutes }
-}
-var once1 = false
-function load(lessonJson) {
-    if (!once1) {
-        document.getElementById("trackSkeliton").remove()
-        document.getElementById("track").style.display = "block"
-        once1 = true
-    }
-    document.getElementById("track").innerHTML = ""
-    for (var lsnStartTime in lessonJson) {
-        const subject = lessonJson[lsnStartTime];
-
-        lsnStartTime = String(lsnStartTime).length == 3 ? "0" + lsnStartTime : lsnStartTime
-        const li = document.createElement("li")
-        const subName = document.createElement("div")
-        const subtime = document.createElement("div")
-
-        subName.innerText = subject ? subject : "END"
-        subtime.innerText = lsnStartTime
-        switch (subject) {
-            case "Math, -SBB":
-                subName.style.color = "grey"
-                subtime.style.color = "grey"
-                break;
-
-            case "Recess":
-                subName.style.color = "grey"
-                subtime.style.color = "grey"
-                break;
-
-            case "Break":
-                subName.style.color = "grey"
-                subtime.style.color = "grey"
-                break;
-
-            case null:
-                subName.style.color = "green"
-                subtime.style.color = "green"
-                break;
-
-
-            default:
-                break;
-        }
-
-        li.appendChild(subName)
-        li.appendChild(subtime)
-        document.getElementById("track").appendChild(li)
-    }
-}
+gettt()
 
 async function gettt() {
     var lastRegLesson = null
-    var currentDate = _spoofDay ? new Date(_spoofDay) : new Date() 
+    var currentDate = _spoofDay ? new Date(_spoofDay) : new Date()
     var curTime = get24HourCode()
-
+    
     // Get Week
-    const semstart = new Date('2023-09-11');
+    const semstart = new Date('2024-1-3');
     const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
     const timeDifference = currentDate.getTime() - semstart.getTime();
     const weekNumber = Math.ceil(timeDifference / millisecondsPerWeek);
 
-    // Get Week Timetable
-    if (weekNumber % 2 == 0) {
-        tt = await fetch("https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/even.json")
-        tt = await tt.json()
-    } else {
-        tt = await fetch("https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/odd.json")
-        tt = await tt.json()
-    }
+    tt = await fetch(`https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/${weekNumber % 2 == 0 ? "even" : "odd"}.json`)
+    tt = await tt.json()
 
     // Get Current Day
     const day = currentDate.getDay()
@@ -111,7 +32,7 @@ async function gettt() {
     // - Countdown
     var once = false
     setInterval(() => {
-        currentDate = _spoofDay ? new Date(_spoofDay) : new Date() 
+        currentDate = _spoofDay ? new Date(_spoofDay) : new Date()
         curTime = get24HourCode()
 
         //  Get Current Lesson
@@ -124,20 +45,18 @@ async function gettt() {
         }
 
         // Load / Reload Table
-        if (curLessonInt !== lastRegLesson) {
-            load(lessonJson)
-        }
-
+        if (curLessonInt !== lastRegLesson) load(lessonJson)
         if (!once) {
             document.getElementById("pbskel").remove()
             document.getElementById("pb").style.display = "block"
             once = true
         }
-        document.getElementById("devinfo").innerHTML = 
-        `Dev </br>
+        document.getElementById("devinfo").innerHTML =
+            `Dev </br>
         Date: ${currentDate} </br>
         PredictedDay: ${dayName[currentDate.getDay()]} (i: ${currentDate.getDay()}) </br>
         PredictedSubj: ${lessonJson[curLessonInt] ? lessonJson[curLessonInt] : "-"}`
+        
         lastRegLesson = curLessonInt;
         if (curTime > parseInt(Object.keys(lessonJson)[Object.keys(lessonJson).length - 1])) {
             var nextday = tt[dayName[currentDate.getDay() + 1]]
@@ -215,4 +134,73 @@ async function gettt() {
         document.querySelector("body > div > div").style.setProperty("--prog", remainingPercentage);
     }
 }
-gettt()
+
+var once1 = false
+function load(lessonJson) {
+    if (!once1) {
+        document.getElementById("trackSkeliton").remove()
+        document.getElementById("track").style.display = "block"
+        once1 = true
+    }
+    document.getElementById("track").innerHTML = ""
+    
+    const arr = Object.keys(lessonJson)
+    arr.sort()
+    arr.forEach(lsnStartTime => {
+            const subject = lessonJson[lsnStartTime];
+
+            lsnStartTime = String(lsnStartTime).length == 3 ? "0" + lsnStartTime : lsnStartTime
+            const li = document.createElement("li")
+            const subName = document.createElement("div")
+            const subtime = document.createElement("div")
+
+            subName.innerText = subject ? subject : "END"
+            subtime.innerText = lsnStartTime
+            switch (subject) {
+                case "Break":
+                case "Recess":
+                case "Math, -SBB":
+                    subName.style.color = "grey"
+                    subtime.style.color = "grey"
+                    break;
+
+                case null:
+                    subName.style.color = "green"
+                    subtime.style.color = "green"
+                    break;
+
+                default:
+                    break;
+            }
+
+            li.appendChild(subName)
+            li.appendChild(subtime)
+            document.getElementById("track").appendChild(li)
+    })
+}
+
+function convert24Hour(t24) {
+    const curTimeLengh = String(t24).length == 3 ? 1 : 2
+    const hours = parseInt(String(t24).substring(0, curTimeLengh), 10)
+    const minutes = parseInt(String(t24).substring(curTimeLengh), 10)
+
+    if (t24 < 100) {
+        return { "hours": 0, "minutes": hours }
+    }
+    return { "hours": hours, "minutes": minutes }
+}
+
+function get24HourCode() {
+    var currentDate = _spoofDay ? new Date(_spoofDay) : new Date()
+    var hours = currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+
+    // Format hours and minutes as two digits
+    var formattedHours = ("0" + hours).slice(-2);
+    var formattedMinutes = ("0" + minutes).slice(-2);
+
+    // Concatenate hours and minutes
+    var code = formattedHours + formattedMinutes;
+
+    return parseInt(code);
+}
