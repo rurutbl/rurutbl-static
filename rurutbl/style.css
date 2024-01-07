@@ -10,7 +10,7 @@ body {
 }
 
 #track,
-#trackSkeliton,
+#track-skel,
 #btime {
   padding: 24px 0px;
   margin: 15px 0px;
@@ -19,7 +19,7 @@ body {
 }
 
 #track > li,
-#trackSkeliton > li {
+#track-skel > li {
   border: #555 solid 1px;
   padding: 10px;
   margin: 10px 20px;
@@ -29,7 +29,7 @@ body {
 }
 
 #track > li::marker,
-#trackSkeliton > li::marker {
+#track-skel > li::marker {
   content: none;
 }
 
@@ -103,6 +103,18 @@ body > h1 {
 #devinfo {
   width: 100vw;
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#devinfo > div {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+#devinfo > p {
+  cursor: pointer;
+  color: #ffafdc;
 }
 /* 
 .pill-selector {

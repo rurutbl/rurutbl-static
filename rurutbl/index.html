@@ -10,17 +10,22 @@
 </head>
 
 <body>
-    <!-- Loading -->
-    <div class="progress-bar-container" id="pbskel">
+    <!-- 
+    <div class="fullttdiv">
+        <button class="fullttbtn" onclick="window.open('/assets/full.pdf')">View Full Timetable</button>
+    </div> 
+    -->
+    <div class="progress-bar-container" id="pb-skel">
         <div class="progress-bar">
-            <div>
-                <span id="timenow" class="px40"></span>
+            <div><span id="timenow" class="px40"></span>
                 <span id="timetil" class="px40" style="width: 90px;"></span>
                 <span id="timetilval" class="px40"></span>
             </div>
         </div>
     </div>
-    <ul id="trackSkeliton" style="display: block;">
+    <div class="progress-bar-container" style="display: none;" id="pb"></div>
+
+    <ul id="track-skel" style="display: block;">
         <li>
             <div class="px40"></div>
             <div class="px40"></div>
@@ -46,19 +51,15 @@
             <div class="px40"></div>
         </li>
     </ul>
+    <ul id="track" style="display: none;"></ul>
 
-    <!-- Main Site -->
-    <div class="progress-bar-container" style="display: none;" id="pb">
-
+    <div id="devinfo">
+        <p onclick="toggleDebugShow()">Debug [Click To Show]</p>
+        <div style="display: none;"></div>
     </div>
-    <ul id="track" style="display: none;">
-    </ul>
-    <div id="devinfo"></div>
-    
+
     <!-- Some Script -->
-    <!-- <div class="fullttdiv">
-                <button class="fullttbtn" onclick="window.open('/assets/full.pdf')">View Full Timetable</button>
-            </div> -->
+    <script src="./refrences.js"></script>
     <script src="./script.js"></script>
 </body>
 

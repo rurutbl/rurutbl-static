@@ -1,154 +1,65 @@
-// var _spoofDay = "1/4/2024 8:20:00"
-var _spoofDay
-
-class Date24 {
-    constructor(t24) {
-        if (!t24) {
-            const curDate = _spoofDay ? new Date(_spoofDay) : new Date()
-            const hours = curDate.getHours()
-            const minutes = curDate.getMinutes()
-            this.hours = ("0" + hours).slice(-2)
-            this.minutes = ("0" + minutes).slice(-2)
-            this.t24 = this.hours + this.minutes
-            return this
-        }
-        this.minutes = t24.toString().slice(-2).padStart(2, "0")
-        this.hours = t24.toString().replace(this.minutes, "").padStart(2, "0")
-        this.t24 = this.hours + this.minutes
-    }
-    toString() {
-        return this.t24.toString()
-    }
-    toInt() {
-        return parseInt(this.t24)
-    }
-    toTimeHourObject() {
-        const curTimeLengh = this.t24.length == 3 ? 1 : 2
-        const hours = parseInt(this.t24.substring(0, curTimeLengh), 10)
-        const minutes = parseInt(this.t24.substring(curTimeLengh), 10)
-        return { "hours": (this.t24 < 100) ? 0 : hours, "minutes": minutes }
-    }
-}
-class circularTimer {
-    constructor() {
-        const prog = document.getElementById("pb")
-        prog.innerHTML = ""
-        this.progcirc = document.createElement("div")
-        this.progcirc.classList.add("progress-bar")
-        this.unnamedDiv = document.createElement("div")
-        this.timenow = document.createElement("span")
-        this.timenow.id = "timenow"
-        this.unnamedDiv.appendChild(this.timenow)
-        this.timetil = document.createElement("span")
-        this.timetil.id = "timetil"
-        this.unnamedDiv.appendChild(this.timetil)
-        this.timetilval = document.createElement("span")
-        this.timetilval.id = "timetilval"
-        this.unnamedDiv.appendChild(this.timetilval)
-        this.progcirc.appendChild(this.unnamedDiv)
-        prog.appendChild(this.progcirc)
-        return this
-    }
-    setTitle(titleStr) {
-        this.timenow.innerHTML = titleStr
-        return this
-    }
-    setSubtitle(subtitleStr) {
-        this.timetil.innerHTML = subtitleStr
-        return this
-    }
-    setRemainingVal(remainingStr) {
-        this.timetilval.innerHTML = remainingStr
-        return this
-    }
-}
-
 (async () => {
-    const curDate = (_spoofDay) ? (new Date(_spoofDay)) : (new Date())
+    const curDate = returnDate()
+    var weekList = null
 
-    var tt = null
-    var lastRegLesson = null
     //? Get Week
-
-    /*
-    ! "Odd week until sem 2"
-    ! like bro just shut up
-    ! Junyuan so fucking retarded
-    const semstart = new Date('2024-1-3');
-    const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
-    const timeDifference = curDate.getTime() - semstart.getTime();
-    const weekNumber = Math.ceil(timeDifference / millisecondsPerWeek);
-
-    tt = await fetch(`/elements/${weekNumber % 2 == 0 ? "even" : "odd"}.json`)
-    */
-
-    tt = await fetch(`/elements/odd.json`)
-    tt = await tt.json()
+    // const _timeDifference = curDate.getTime() - semstart.getTime();
+    const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
+    weekList = await fetch(`./elements/${weekNumber % 2 == 0 ? "even" : "odd"}.json`)
+    weekList = await weekList.json()
 
     //? Get Current Day
-    const day = curDate.getDay()
-    const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
-    const lessonJson = tt[dayName[day]]
-    const timeList = Object.keys(lessonJson).toSorted()
+    const _dayI = curDate.getDay()
+    const dayList = weekList[dayName[_dayI]]
+    const timeList = Object.keys(dayList).toSorted()
 
-    //? Updates every seconds for:
-    // - Circular Progress
-    // - Countdown
-    var once = false
-    setInterval(() => {
+    updatePage()
+    function updatePage() {
         const Time24 = new Date24()
-
-        const curDate = _spoofDay ? new Date(_spoofDay) : new Date()
+        const curDate = returnDate()
         const curTime = Time24.toInt()
 
         //  Get Current Lesson
-        let curLessont24 = -Infinity;
-        timeList.forEach(lsnStartTime => {
-            const intTime = new Date24(lsnStartTime).toInt()
-            const _beforeNow = curTime < intTime
-            const _lastSavedisLess = curLessont24 < intTime
-            const _default = curLessont24 == -Infinity
-            if (_beforeNow && _lastSavedisLess && _default) curLessont24 = new Date24(intTime)
-        })
+        let curLessont24 = getCurrentLsn(timeList, curTime)
 
-        // generateTrack / Reload Table
-        if (curLessont24 !== lastRegLesson) generateTrack(lessonJson)
-        if (!once) { document.getElementById("pbskel").remove(); document.getElementById("pb").style.display = "block"; once = true }
+        if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList)
+        lastRegLesson = curLessont24.toString()
 
-        // /*  */
-        // document.getElementById("devinfo").innerHTML =
-        //     `Dev </br>
-        // Date: ${curDate} </br>
-        // PredictedDay: ${dayName[curDate.getDay()]} (i: ${curDate.getDay()}) </br>
-        // PredictedSubj: ${lessonJson[curLessont24.toString()] ? lessonJson[curLessont24.toString()] : "-"}`
-        // /*  */
+        updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
 
-        lastRegLesson = curLessont24;
-        if (curTime > parseInt(timeList[timeList.length - 1])) {
-            let _tmrI = curDate.getDay() + 1
-            let _tmrDay = dayName[_tmrI]
-            const nextday = tt[_tmrDay] || tt[dayName[0]]
-            const reportTime = timeList[0]
+        let _lastInList = parseInt(timeList[timeList.length - 1])
+        if (curTime > _lastInList) {
+            let _nextI = curDate.getDay() + 1
+            let _nextDayList = dayName[_nextI]
+            const nextday = weekList[_nextDayList] || weekList[dayName[0]]
+            const reportTime = Object.keys(nextday).toSorted()[0]
 
             const circp = new circularTimer()
-            circp.setTitle(`Report on ${_tmrDay || dayName[0]} by ${reportTime}`)
+            circp.setTitle(`Report on ${_nextDayList || dayName[0]} by ${reportTime}`)
                 .setSubtitle(`First lesson is ${nextday[reportTime]}`)
 
-            generateTrack(nextday)
+            updateTrack(nextday)
+
+            document.getElementById("pb-skel").remove();
+            document.getElementById("pb").style.display = "block"
+            document.elementsLoaded.pb = true
             return
         }
         if (curLessont24 == -Infinity) {
-            generateTrack({})
+            updateTrack({})
             const circp = new circularTimer()
             circp.setTitle(`idk wait until monday`)
+            document.getElementById("pb-skel").remove();
+            document.getElementById("pb").style.display = "block"
+            document.elementsLoaded.pb = true
             return
         }
-        generateCirc(Time24, curLessont24)
-    }, 1000)
+        updateCirc(Time24, curLessont24)
+        setTimeout(updatePage, 1000)
+    }
 
-    function generateCirc(curTime, curLessont24) {
+    function updateCirc(curTime, curLessont24) {
         const circp = new circularTimer()
-        //  Convert All 24 Hour formats to hrs and mins
         const { hours: curHours, minutes: curMins } = curTime.toTimeHourObject()
         const { hours: LessonHours, minutes: LessonMins } = curLessont24.toTimeHourObject()
 
@@ -162,17 +73,17 @@ class circularTimer {
         const i = timeList.indexOf(curLessont24.toString())
 
         if (curTime < timeList[0]) {
-            circp.setTitle(`Time until Start class (${lessonJson[timeList[0]]})`)
+            circp.setTitle(`Time until Start class (${dayList[timeList[0]]})`)
         } else {
-            circp.setTitle(`${lessonJson[timeList[i - 1]]}`)
-                .setSubtitle(`Time until <b>${lessonJson[curLessont24.toString()]}</b>`)
+            circp.setTitle(`${dayList[timeList[i - 1]]}`)
+                .setSubtitle(`Time until <b>${dayList[curLessont24.toString()]}</b>`)
         }
 
         // Countdown
-        const _hr = hoursLeft.toString().padStart(2, "0")// Hours
-        const _min = Math.abs(minutesLeft).toString().padStart(2, "0") - 1
-        const _sec = (60 - _spoofDay ? new Date(_spoofDay).getSeconds() : new Date().getSeconds()).toString().padStart(2, "0")
-        circp.setRemainingVal(`${_hr}:${_min}:${_sec}`)
+        const _hr = hoursLeft.toString().padStart(2, "0")
+        const _min = (Math.abs(minutesLeft) - 1).toString().padStart(2, "0")
+        const _sec = (60 - returnDate().getSeconds()).toString().padStart(2, "0")
+        circp.setRemainingVal(`${_hr}:${_min.length == 1 ? "0" + _min : _min}:${_sec}`)
 
         const element = document.getElementById("track").children[i - 1]
         if (element) element.classList.add("active")
@@ -186,17 +97,14 @@ class circularTimer {
         const remainingPercentage = ((totalSubjectDuration - remainingMinutes) / totalSubjectDuration) * 100;
 
         circp.progcirc.style.setProperty("--prog", remainingPercentage);
+
+        if (document.elementsLoaded.pb == false) clearSkel("pb")
     }
 
-    var once1 = false
-    function generateTrack(lessonJson) {
-        if (!once1) { document.getElementById("trackSkeliton").remove(); document.getElementById("track").style.display = "block"; once1 = true }
+    function updateTrack(dayList) {
         document.getElementById("track").innerHTML = ""
-
-        const arr = Object.keys(lessonJson)
-        arr.sort()
-        arr.forEach(lsnStartTime => {
-            const subject = lessonJson[lsnStartTime];
+        timeList.forEach(lsnStartTime => {
+            const subject = dayList[lsnStartTime];
 
             lsnStartTime = String(lsnStartTime).length == 3 ? "0" + lsnStartTime : lsnStartTime
             const li = document.createElement("li")
@@ -226,6 +134,7 @@ class circularTimer {
             li.appendChild(subtime)
             document.getElementById("track").appendChild(li)
         })
-    }
 
+        if (document.elementsLoaded.track == false) clearSkel("track")
+    }
 })()
