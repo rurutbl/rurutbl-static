@@ -35,6 +35,7 @@ class Date24 {
         const curTimeLengh = this.t24.length == 3 ? 1 : 2
         const hours = parseInt(this.t24.substring(0, curTimeLengh), 10)
         const minutes = parseInt(this.t24.substring(curTimeLengh), 10)
+        
         return { "hours": (this.t24 < 100) ? 0 : hours, "minutes": minutes }
     }
 }

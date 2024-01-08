@@ -1,26 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
 </head>
 
 <body>
     <div class="progress-bar-container" id="pb-skel">
         <div class="progress-bar">
-            <div>
-                <span id="timenow">@@@@</span>
-                <span id="timetil">Time until: @@@@</span>
-                <span id="timetilval">0:00:00</span>
+            <div><span id="timenow" class="px40"></span>
+                <span id="timetil" class="px40" style="width: 120px;"></span>
+                <span id="timetilval" class="px40"></span>
             </div>
         </div>
     </div>
     <ul id="track-skel" style="display: block;">
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
+        <li>
+            <div class="px40"></div>
+            <div class="px40"></div>
+        </li>
     </ul>
+
     <div id="pb" class="progress-bar-container" style="display: none;">
         <div class="progress-bar">
             <div>
@@ -30,10 +48,7 @@
             </div>
         </div>
     </div>
-    <ul id="track" style="display: none;">
-    </ul>
-    <div id="devinfo"></div>
-    <script src="/rurutbl/script.js"></script>
+    <ul id="track" style="display: none;"></ul>
+    <script src="/rurutbl/scrips/refrences.js"></script>
+    <script src="/rurutbl/scrips/script.js"></script>
 </body>
-
-</html>

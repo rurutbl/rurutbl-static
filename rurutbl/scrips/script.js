@@ -5,7 +5,7 @@
     //? Get Week
     // const _timeDifference = curDate.getTime() - semstart.getTime();
     const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
-    weekList = await fetch(`./elements/${weekNumber % 2 == 0 ? "even" : "odd"}.json`)
+    weekList = await fetch(`/rurutbl/elements/${weekNumber % 2 == 0 ? "even" : "odd"}.json`)
     weekList = await weekList.json()
 
     //? Get Current Day
@@ -25,7 +25,7 @@
         if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList)
         lastRegLesson = curLessont24.toString()
 
-        updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
+        if (window.location.pathname == '/rurutbl/') updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
 
         let _lastInList = parseInt(timeList[timeList.length - 1])
         if (curTime > _lastInList) {
@@ -103,16 +103,23 @@
 
     function updateTrack(dayList) {
         document.getElementById("track").innerHTML = ""
+
+        const timeList = Object.keys(dayList).toSorted()
         timeList.forEach(lsnStartTime => {
             const subject = dayList[lsnStartTime];
 
-            lsnStartTime = String(lsnStartTime).length == 3 ? "0" + lsnStartTime : lsnStartTime
             const li = document.createElement("li")
             const subName = document.createElement("div")
             const subtime = document.createElement("div")
 
+            const d24 = new Date24(lsnStartTime).toTimeHourObject()
+
+            const pref = d24.hours > 12 
+            const hours = pref ? d24.hours - 12 : d24.hours
+            const minutes = d24.minutes == 0 ? "00" : d24.minutes
+
             subName.innerText = subject ? subject : "END"
-            subtime.innerText = lsnStartTime
+            subtime.innerText = `${hours}:${minutes} ${pref ? "PM" : "AM"}`
             switch (subject) {
                 case "Break":
                 case "Recess":
