@@ -56,9 +56,7 @@
             "./assets/rndimages/kana.jpg"
         ]
     },
-    "👑Blue": {
-        "name": "Blue (Leader/WxS)",
-        "quote": "If my looks and talent isn't worth anything, I'll use my voice to make an impact in the world!",
+    "Ena": {
         "sekai": [
             {
                 "name": "Ena",
@@ -69,18 +67,11 @@
                 "color": "#FFBB00"
             }
         ],
-        "birthday": "August 28",
         "moreInfo": [
-            "😎most sane pjsk player!!",
-            "♌Leo",
-            "🎸Guitarist",
-            "🎵Loves Music",
-            "⭐Am Tsook‼",
-            "😁Extroverted",
-            "⭐Am Tsook‼"
+            "betrayer"
         ],
         "assets": [
-            "./assets/MGTQOQT.png"
+            "./"
         ]
     },
     "Michael": {
