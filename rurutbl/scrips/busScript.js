@@ -1,9 +1,7 @@
 async function aaa (){
     await fetch(`https://uniformlimeplots.felicity1l1.repl.co/`).catch(e => {})
 
-    if (!tt) {
-        return aaa()
-    }
+    if (!tt) return aaa()
     const day = 3//currentDate.getDay() - 1
     const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     console.log(tt);

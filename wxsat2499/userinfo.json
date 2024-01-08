@@ -1,5 +1,5 @@
 {
-    "🏳‍⚧Lulu": {
+    "Lulu": {
         "name": "Lulu (Owner)",
         "quote": "I want to make people smile, is that ok?",
         "sekai": [
@@ -21,15 +21,15 @@
             "🚃 Creator of 2499(not leader)",
             "😺 JavaScript coder (I coded this Website)",
             "🌚 Introvert /alone",
-            "<a href=\"/\">Go to my site (home)</a>"
+            "💬<a href=\"/\">Go to my site (home)</a>"
         ],
         "assets": [
             "./assets/769DKAS.png",
             "./assets/rndimages/pmol.jpg"
         ]
     },
-    "👑Kayla": {
-        "name": "Kayla (Leader/Nightcord)",
+    "Kayla": {
+        "name": "Kayla (Leader)",
         "quote": "I have to keep composing, and doing whatever I can. I don't want to feel nervous anymore",
         "sekai": [
             {
@@ -54,24 +54,6 @@
         "assets": [
             "./assets/NZHAM1X.png",
             "./assets/rndimages/kana.jpg"
-        ]
-    },
-    "Ena": {
-        "sekai": [
-            {
-                "name": "Ena",
-                "color": "#CCAA87"
-            },
-            {
-                "name": "Tsukasa",
-                "color": "#FFBB00"
-            }
-        ],
-        "moreInfo": [
-            "betrayer"
-        ],
-        "assets": [
-            "./"
         ]
     },
     "Michael": {
@@ -99,6 +81,46 @@
         "assets": [
             "./assets/WhatsApp Image 2023-11-05 at 21.28.21_036e8f81.jpg",
             "./assets/rndimages/cheal.jpg"
+        ]
+    },
+    "Shoutarou": {
+        "name": "Shoutarou / ChicagamingFNF256",
+        "sekai": [
+            {
+                "name": "Len",
+                "color": "#FFEE12"
+            },
+            {
+                "name": "",
+                "color": ""
+            }
+        ],
+        "moreInfo": [
+            "🎥 Have yt: <a href=\"https://www.youtube.com/@ChicagamingFNF256\">yt/@ChicagamingFNF256</a>",
+            "😳 Shy",
+            "💬this guy just joined idk man"
+        ],
+        "assets": [
+            ""
+        ]
+    },
+    "Miku": {
+        "name": "Miku",
+        "sekai": [
+            {
+                "name": "Miku",
+                "color": "#33CCBB "
+            },
+            {
+                "name": "",
+                "color": ""
+            }
+        ],
+        "moreInfo": [
+            "💬this girl never reply since last year"
+        ],
+        "assets": [
+            "./assets/Untitled.png"
         ]
     }
 }
