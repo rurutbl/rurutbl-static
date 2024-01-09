@@ -1,50 +1,25 @@
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 
 <body>
     <div class="progress-bar-container" id="pb-skel">
         <div class="progress-bar">
             <div><span id="timenow" class="px40"></span>
-                <span id="timetil" class="px40" style="width: 120px;"></span>
+                <span id="timetil" class="px40" style="width: 200px;"></span>
                 <span id="timetilval" class="px40"></span>
             </div>
         </div>
     </div>
-    <ul id="track-skel" style="display: block;">
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-    </ul>
+    <ul id="track-skel" style="display: block;"></ul>
 
     <div id="pb" class="progress-bar-container" style="display: none;">
         <div class="progress-bar">
             <div>
-                <span id="timenow">@@@@</span>
-                <span id="timetil">Time until: @@@@</span>
-                <span id="timetilval">0:00:00</span>
+                <span id="timenow"></span>
+                <span id="timetil"></span>
+                <span id="timetilval"></span>
             </div>
         </div>
     </div>

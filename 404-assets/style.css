@@ -1,0 +1,39 @@
+a{
+    color: #d84;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+body > div {
+  display: flex;
+  flex-direction: column;
+  background-color: #212529;
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 70vw;
+  max-width: 350px;
+  margin: 10px;
+  text-align: center;
+}
+
+body > div > p {
+    font-size: 1.5rem;
+    margin: 0px 10px;
+    text-align: center;
+    margin: 10px 0px;
+}
+body > div > span {width: 100%;}
+body > div > img {
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #747474;
+}
