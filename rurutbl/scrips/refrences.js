@@ -1,8 +1,9 @@
 document.elementsLoaded = { "track": false, "pb": false }
+document.loopingOn = true
 var lastRegLesson = null
 
 //! Config
-let _spoofDay// = "1/5/2024 22:40:40"
+let _spoofDay
 let semstart = "Disabled"// new Date('2024-1-3');
 
 //! Static refrences
@@ -35,7 +36,7 @@ class Date24 {
         const curTimeLengh = this.t24.length == 3 ? 1 : 2
         const hours = parseInt(this.t24.substring(0, curTimeLengh), 10)
         const minutes = parseInt(this.t24.substring(curTimeLengh), 10)
-        
+
         return { "hours": (this.t24 < 100) ? 0 : hours, "minutes": minutes }
     }
 }
@@ -74,29 +75,6 @@ class circularTimer {
 }
 
 //! Functions
-function toggleDebugShow() {
-    const debug = document.querySelector("#devinfo > div")
-    debug.style.display = debug.style.display == "none" ? "flex" : "none"
-}
-function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber){
-    const debugJson = {
-        "Date": curDate,
-        "Stated Day": dayName[curDate.getDay()],
-        "Actual Day (from Sun)": curDate.getDay(),
-        "Subj": lessonJson[curLessont24.toString()] || `Cant detect, Date24: ${curLessont24.toString()}`,
-        "Week count from": semstart,
-        "Week Num": weekNumber,
-    }
-
-    const debug = document.querySelector("#devinfo > div")
-    debug.innerHTML = ""
-    for (const key in debugJson) {
-        const data = debugJson[key];
-        const span = document.createElement("span")
-        span.innerText = `${key}: ${data}`
-        debug.appendChild(span)
-    }
-}
 function returnDate() { return _spoofDay ? new Date(_spoofDay) : new Date() }
 function getCurrentLsn(timeList, curTime) {
     let curLessont24 = -Infinity;
@@ -107,10 +85,11 @@ function getCurrentLsn(timeList, curTime) {
         const _default = curLessont24 == -Infinity
         if (_beforeNow && _lastSavedisLess && _default) curLessont24 = new Date24(intTime)
     })
-    return curLessont24
+    return curLessont24 == -Infinity ? null : curLessont24
 }
-function clearSkel(elementName){
-    document.getElementById(elementName+"-skel").remove();
+function clearSkel(elementName) {
+    if (document.elementsLoaded[elementName]) return
+    document.getElementById(elementName + "-skel").remove();
     document.getElementById(elementName).style.display = "block"
     document.elementsLoaded[elementName] = true
 }

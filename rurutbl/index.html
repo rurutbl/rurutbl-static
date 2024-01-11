@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./style.css">
     <title>Ruru TBL</title>
 </head>
 
 <body>
-    <!-- 
-    <div class="fullttdiv">
-        <button class="fullttbtn" onclick="window.open('/assets/full.pdf')">View Full Timetable</button>
-    </div> 
-    -->
-    <div class="progress-bar-container" id="pb-skel">
-        <div class="progress-bar">
-            <div><span id="timenow" class="px40"></span>
-                <span id="timetil" class="px40" style="width: 90px;"></span>
-                <span id="timetilval" class="px40"></span>
+    <div>
+        <div class="progress-bar-container" id="pb-skel">
+            <div class="progress-bar">
+                <div><span id="timenow" class="px40"></span>
+                    <span id="timetil" class="px40" style="width: 90px;"></span>
+                    <span id="timetilval" class="px40"></span>
+                </div>
             </div>
         </div>
+        <div class="progress-bar-container" style="display: none;" id="pb">
+        </div>
     </div>
-    <div class="progress-bar-container" style="display: none;" id="pb"></div>
 
     <ul id="track-skel" style="display: block;">
         <li>
@@ -53,13 +53,19 @@
     </ul>
     <ul id="track" style="display: none;"></ul>
 
-    <div id="devinfo">
-        <p onclick="toggleDebugShow()">Debug [Click To Show]</p>
+    <div class="dropdown-parent" id="table">
+        <p class="dropdown" onclick="toggleTableShow()">Full Timetable</p>
+        <div style="display: none; max-width: 100%; overflow: scroll;"><table id="fulltbl"></table></div>
+    </div>
+
+    <div class="dropdown-parent" id="devinfo">
+        <p class="dropdown" onclick="toggleDebugShow()">Debug</p>
         <div style="display: none;"></div>
     </div>
 
     <!-- Some Script -->
     <script src="/rurutbl/scrips/refrences.js"></script>
+    <script src="/rurutbl/scrips/additional.js"></script>
     <script src="/rurutbl/scrips/script.js"></script>
 </body>
 

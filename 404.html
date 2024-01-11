@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="/404-assets/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Error 404 Page not found</title>
 </head>
 
@@ -16,8 +18,9 @@
         <span>Dont't worry helpful fox Senko is here, she will pamper you back where you came from.</span>
         <span><a href="/">Luluhoy Home</a> | <a href="/wxsat2499/">WxS@2499 Home</a></span>
         <p>If you think something is wrong:</p>
-        <a href="https://github.com/LuluHuman/luluhuman.github.io/issues">Report Issue</a>
-        <a href="https://github.com/LuluHuman/luluhuman.github.io/commits/main/">Check commits if page was removed</a>
+        <a target="_blank" href="https://github.com/LuluHuman/luluhuman.github.io/issues">Report Issue</a>
+        <a target="_blank" href="https://github.com/LuluHuman/luluhuman.github.io/commits/main/">Check commits if page
+            was removed</a>
     </div>
 
     <script>
@@ -25,7 +28,7 @@
         const element = document.querySelector("body > div > p")
         if (pathname == "/404.html") {
             element.innerText = "404.html exists but why are you here 💀"
-        }else{
+        } else {
             element.innerText = element.innerText.replace("$pathname", pathname)
         }
     </script>

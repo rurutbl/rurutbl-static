@@ -1,6 +1,7 @@
-(async () => {
+app()
+async function app() {
     const curDate = returnDate()
-    var weekList = null
+    var weekList
 
     //? Get Week
     // const _timeDifference = curDate.getTime() - semstart.getTime();
@@ -21,10 +22,6 @@
 
         //  Get Current Lesson
         let curLessont24 = getCurrentLsn(timeList, curTime)
-
-        if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList)
-        lastRegLesson = curLessont24.toString()
-
         if (window.location.pathname == '/rurutbl/') updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
 
         let _lastInList = parseInt(timeList[timeList.length - 1])
@@ -40,20 +37,27 @@
 
             updateTrack(nextday)
 
-            document.getElementById("pb-skel").remove();
-            document.getElementById("pb").style.display = "block"
+            clearSkel("pb")
             document.elementsLoaded.pb = true
             return
         }
-        if (curLessont24 == -Infinity) {
-            updateTrack({})
+        if (curLessont24 == null) {
             const circp = new circularTimer()
             circp.setTitle(`idk wait until monday`)
-            document.getElementById("pb-skel").remove();
-            document.getElementById("pb").style.display = "block"
+
+            updateTrack({})
+
+            clearSkel("pb")
             document.elementsLoaded.pb = true
             return
         }
+
+        if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList)
+        lastRegLesson = curLessont24.toString()
+
+        if (_spoofDay) _spoofDay = new Date(_spoofDay).getTime() + 1000
+
+        if (document.loopingOn == false) return
         updateCirc(Time24, curLessont24)
         setTimeout(updatePage, 1000)
     }
@@ -114,7 +118,7 @@
 
             const d24 = new Date24(lsnStartTime).toTimeHourObject()
 
-            const pref = d24.hours > 12 
+            const pref = d24.hours > 12
             const hours = pref ? d24.hours - 12 : d24.hours
             const minutes = d24.minutes == 0 ? "00" : d24.minutes
 
@@ -144,4 +148,4 @@
 
         if (document.elementsLoaded.track == false) clearSkel("track")
     }
-})()
+}
