@@ -1,17 +1,3 @@
-async function aaa (){
-    await fetch(`https://uniformlimeplots.felicity1l1.repl.co/`).catch(e => {})
-
-    if (!tt) return aaa()
-    const day = 3//currentDate.getDay() - 1
-    const dayName = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    console.log(tt);
-    const lessonJson = tt[dayName[day]]
-    const endtime = (Object.keys(lessonJson)[Object.keys(lessonJson).length - 1])
-
-    const form = parseInt(get24HourCode()) < parseInt(endtime) ? "Go" : "Return"
-    reloadTiming(form)
-}
-aaa()
 
 async function reloadTiming(formFunc) {
     const info = document.getElementById("btime").children[1]

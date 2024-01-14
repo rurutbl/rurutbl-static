@@ -1,4 +1,4 @@
-async function getsocals(){
+async function getsocals() {
     const links = await fetch('https://raw.githubusercontent.com/LuluHuman/luluhuman.github.io/main/elements/socals.json')
     const data = await links.json()
 
@@ -15,13 +15,13 @@ async function getlinks() {
 
     for (const title in data) {
         if (Object.hasOwnProperty.call(data, title)) {
-            const {url, icon} = data[title];
+            const { url, icon } = data[title];
 
             const linksele = document.getElementsByTagName("links")[0]
 
             const divElement = document.createElement('div');
             divElement.onclick = function () { window.open(url) }
-    
+
             const imgElement = document.createElement('img');
             imgElement.src = icon
             imgElement.alt = 'favicon';
@@ -36,7 +36,7 @@ async function getlinks() {
     }
 }
 
-async function getTime(){
+async function getTime() {
     var currentDate = new Date();
 
     var utcOffset = 8;
@@ -46,11 +46,11 @@ async function getTime(){
     var hours = utcPlus8Time.getUTCHours();
     var minutes = utcPlus8Time.getUTCMinutes();
 
-    if (hours - 12 > 0){
+    if (hours > 12) {
         hours = hours - 12
         m = "PM"
-    }else{
-        hours = hours 
+    } else {
+        hours = hours
         m = "AM"
     }
     var timeString = hours.toString().padStart(2, '0') + ':' +

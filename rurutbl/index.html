@@ -25,37 +25,44 @@
         </div>
     </div>
 
-    <ul id="track-skel" style="display: block;">
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-        <li>
-            <div class="px40"></div>
-            <div class="px40"></div>
-        </li>
-    </ul>
-    <ul id="track" style="display: none;"></ul>
+    <div>
+        <h2>You are viewing class
+            <select id="classDropdown"></select>
+        </h2>
+        <ul id="track-skel" style="display: block;">
+            <li>
+                <div class="px40"></div>
+                <div class="px40"></div>
+            </li>
+            <li>
+                <div class="px40"></div>
+                <div class="px40"></div>
+            </li>
+            <li>
+                <div class="px40"></div>
+                <div class="px40"></div>
+            </li>
+            <li>
+                <div class="px40"></div>
+                <div class="px40"></div>
+            </li>
+            <li>
+                <div class="px40"></div>
+                <div class="px40"></div>
+            </li>
+            <li>
+                <div class="px40"></div>
+                <div class="px40"></div>
+            </li>
+        </ul>
+        <ul id="track" style="display: none;"></ul>
+    </div>
 
     <div class="dropdown-parent" id="table">
         <p class="dropdown" onclick="toggleTableShow()">Full Timetable</p>
-        <div style="display: none; max-width: 100%; overflow: scroll;"><table id="fulltbl"></table></div>
+        <div style="display: none;">
+            <table id="fulltbl"></table>
+        </div>
     </div>
 
     <div class="dropdown-parent" id="devinfo">

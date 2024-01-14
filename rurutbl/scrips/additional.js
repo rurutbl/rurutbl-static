@@ -28,6 +28,7 @@ function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
         "Subj": curLessont24 ? lessonJson[curLessont24.toString()] : `Cant detect`,
         "Week count from": semstart,
         "Week Num": weekNumber,
+        "Raw Url": `<a href="${document.listUrl}">${document.listUrl}</a>`,
     }
 
     const debug = document.querySelector("#devinfo > div")
@@ -35,7 +36,7 @@ function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
     for (const key in debugJson) {
         const data = debugJson[key];
         const span = document.createElement("span")
-        span.innerText = `${key}: ${data}`
+        span.innerHTML = `${key}: ${data}`
         debug.appendChild(span)
     }
 
@@ -53,68 +54,95 @@ function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
     debug.appendChild(input)
 }
 
-(async () => {
-    var weekListOdd = await fetch(`/rurutbl/elements/odd.json`)
-    weekListOdd = await weekListOdd.json()
+function crTh(content) {
+    const th = document.createElement("th")
+    th.innerText = content
+    return th
+}
 
+(async () => {
     const fulltbl = document.getElementById("fulltbl")
 
-    const tr = document.createElement("tr")
-
-    const th = document.createElement("th")
-    th.innerText = ""
-    tr.appendChild(th)
-
-    for (const day in weekListOdd) {
-        const dayList = weekListOdd[day];
-
-        const th = document.createElement("th")
-        th.innerText = day
-        tr.appendChild(th)
-    }
-    fulltbl.appendChild(tr)
+    var weekListOdd
+    weekListOdd = await fetch(document.listUrl)
+    weekListOdd = await weekListOdd.json()
 
     const time = { h: 8, m: 0 }
+    const weekListInStep = {}
 
+    const timeRow = document.createElement("tr")
+    timeRow.appendChild(crTh(""))
     for (let i = 0; i < 22; i++) {
-        const tr2 = document.createElement("tr")
-
-        const th = document.createElement("th")
-        th.innerText = `${time.h}:${time.m.toString().padStart(2, "0")}`
-        tr2.appendChild(th)
+        timeRow.appendChild(crTh(`${time.h}:${time.m.toString().padStart(2, "0")}`))
 
         for (const day in weekListOdd) {
+            if (!weekListInStep[day]) weekListInStep[day] = {}
             const dayList = weekListOdd[day];
 
-            const td = document.createElement("td")
-
             const h = (time.h < 10 ? "0" + time.h : time.h).toString()
-            const m = ((time.m < 10 ? "0" + time.m : time.m)).toString()
+            const m = (time.m < 10 ? "0" + time.m : time.m).toString()
             const t24 = h + m
 
-            const exactStart = dayList[t24]
-            if (exactStart) {
-                td.innerText = exactStart
-            } else {
-                const timeList = Object.keys(dayList).toSorted()
-                if (t24 >= timeList) {
-                    const timeAfter = getCurrentLsn(timeList, t24)
-                    if (timeAfter == null) { td.innerText = "-"; continue }
-                    const timeI = timeList.indexOf(timeAfter.toString()) - 1
-                    const time = timeList[timeI]
-                    td.innerText = dayList[time]
-                }
-            }
+            const exactStartName = dayList[t24]
+            if (exactStartName) { weekListInStep[day][t24] = exactStartName; continue }
 
-            tr2.appendChild(td)
+            const timeList = Object.keys(dayList).toSorted()
+            if (!(t24 >= timeList)) continue
+
+            const timeAfter = getCurrentLsn(timeList, t24)
+            if (timeAfter == null) { weekListInStep[day][t24] = "-"; continue }
+
+            const timeI = timeList.indexOf(timeAfter.toString()) - 1
+            const steppedTime = timeList[timeI]
+            weekListInStep[day][t24] = dayList[steppedTime]
         }
+
 
         time.m += 20
-        if (time.m >= 60) {
-            time.h++
-            time.m -= 60
+        if (time.m >= 60) { time.h++; time.m -= 60 }
+
+        fulltbl.appendChild(timeRow)
+    }
+
+    for (const day in weekListOdd) {
+        const dayRow = document.createElement("tr")
+        dayRow.appendChild(crTh(day))
+        fulltbl.appendChild(dayRow)
+
+        var lastEle = null
+        const sortedKeys = Object.keys(weekListInStep[day]).toSorted()
+        if (sortedKeys[0] > 800) {
+            const td = document.createElement("td")
+            td.innerText = ""
+            td.colSpan = 2
+            dayRow.appendChild(td)
         }
 
-        fulltbl.appendChild(tr2)
+        sortedKeys.forEach(cday => {
+            if (lastEle && weekListInStep[day][cday] == lastEle.innerText) {
+                lastEle.colSpan++
+                return
+            }
+            const td = document.createElement("td")
+            td.innerText = weekListInStep[day][cday]
+            dayRow.appendChild(td)
+            lastEle = td
+        });
     }
 })()
+
+
+const classDropdown = document.getElementById("classDropdown")
+classDropdown.onchange = () => {
+    document.cookie = `setting-class=${classDropdown.value}`
+    console.log("Changed class to", classDropdown.value);
+    window.location.href = window.location.href
+}
+scannedClasses.forEach(c => {
+    const option = document.createElement("option")
+    option.innerText = c
+    classDropdown.appendChild(option)
+})
+
+const savedClass = getCook("setting-class")
+if (savedClass) {classDropdown.value = savedClass}

@@ -172,6 +172,7 @@ td,
 th {
   text-align: center;
   padding: 8px;
+  border: #555 solid 1px;
 }
 
 td {
@@ -186,7 +187,7 @@ td {
   border-radius: 25px;
 }
 
-.dropdown-parent{
+.dropdown-parent {
   width: 100vw;
 }
 .dropdown {
@@ -211,4 +212,20 @@ p.dropdown::before {
 
 p.dropdown.active::before {
   content: "\e5cf";
+}
+
+#table > div {
+  max-width: 100%;
+  overflow-x: scroll;
+  padding: 30px 0;
+}
+
+h2 {
+  text-align: center;
+}
+h2 > select {
+  font-size: 1em;
+  color: #d84;
+  border: none;
+  background-color: transparent;
 }

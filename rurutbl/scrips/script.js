@@ -4,9 +4,7 @@ async function app() {
     var weekList
 
     //? Get Week
-    // const _timeDifference = curDate.getTime() - semstart.getTime();
-    const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
-    weekList = await fetch(`/rurutbl/elements/${weekNumber % 2 == 0 ? "even" : "odd"}.json`)
+    weekList = await fetch(document.listUrl)
     weekList = await weekList.json()
 
     //? Get Current Day

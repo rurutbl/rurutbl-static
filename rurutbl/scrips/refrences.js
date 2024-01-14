@@ -2,6 +2,12 @@ document.elementsLoaded = { "track": false, "pb": false }
 document.loopingOn = true
 var lastRegLesson = null
 
+
+// const _timeDifference = curDate.getTime() - semstart.getTime();
+const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
+const setting_class = getCook("setting-class")
+document.listUrl = `/rurutbl/classes/${setting_class || "3B"}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
+
 //! Config
 let _spoofDay
 let semstart = "Disabled"// new Date('2024-1-3');
@@ -9,6 +15,7 @@ let semstart = "Disabled"// new Date('2024-1-3');
 //! Static refrences
 const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
 const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
+const scannedClasses = ["3B", "3C"]
 
 //! Classes
 class Date24 {
@@ -92,4 +99,9 @@ function clearSkel(elementName) {
     document.getElementById(elementName + "-skel").remove();
     document.getElementById(elementName).style.display = "block"
     document.elementsLoaded[elementName] = true
+}
+
+function getCook(cookiename) {
+    var cookiestring = RegExp(cookiename + "=[^;]+").exec(document.cookie);
+    return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./, "") : "");
 }
