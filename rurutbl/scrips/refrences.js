@@ -15,7 +15,6 @@ let semstart = "Disabled"// new Date('2024-1-3');
 //! Static refrences
 const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
 const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
-const scannedClasses = ["3B", "3C"]
 
 //! Classes
 class Date24 {

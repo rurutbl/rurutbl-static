@@ -7,8 +7,8 @@
         "1120": "Elect-Art/POA [4C]",
         "1220": "Comb.SS",
         "1320": "Comb Hum",
-        "1400": "BreakMon",
-        "1500": "Null",
+        "1400": "Break",
+        "1500": null,
         "1420": "MTL"
     },
     "Tuesday": {
@@ -19,7 +19,7 @@
         "1140": "Comb.SS",
         "1220": "*Sci (Chem)",
         "1320": "Math",
-        "1420": "Null"
+        "1420": null
     },
     "Wednesday": {
         "0840": "CCE",
@@ -27,9 +27,9 @@
         "1020": "Math",
         "1120": "*Sci (Phy/Bio)",
         "1220": "MTL",
-        "1320": "BreakWed",
+        "1320": "Break",
         "1340": "Eng",
-        "1440": "Null"
+        "1440": null
     },
     "Thursday": {
         "0800": "CCE",
@@ -40,13 +40,13 @@
         "1200": "Elect-Art/POA [4C]",
         "1300": "Math",
         "1340": "MTL",
-        "1420": "Null"
+        "1420": null
     },
     "Friday": {
         "0840": "PE",
         "0940": "Recess",
         "1020": "MTL",
         "1120": "Math",
-        "1220": "Null"
+        "1220": null
     }
 }

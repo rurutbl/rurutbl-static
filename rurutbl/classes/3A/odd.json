@@ -1,1 +1,52 @@
-{"Monday": {"0800": "CCE", "0900": "CPA", "1000": "Recess", "1040": "Math", "1120": "Eng", "1200": "MTL", "1240": "BreakMon", "1300": "Science(NT)/Sci( Phy/Bio)eS Bese Ne ote: aa aa", "1500": "Null", "1400": "EBS"}, "Tuesday": {"0800": "CPA", "0900": "Eng", "1000": "SS (NT)", "1100": "Recess", "1140": "Math", "1240": "PE", "1340": "MTL", "1440": "Null"}, "Wednesday": {"0840": "CCE", "0940": "Math", "1020": "Recess", "1100": "PE", "1200": "Eng", "1240": "BreakWed", "1300": "Science(NT)/Sci(Chem)5m: Hun cn lin wat", "1400": "MTL", "1440": "Null"}, "Thursday": {"0800": "CCE", "0840": "CPA", "0940": "Science(NT)/Sci(Phy/Bio)teenie Wat ee epee", "1040": "Recess", "1120": "Eng", "1220": "Math", "1320": "EBS", "1420": "Null"}, "Friday": {"0840": "Math", "0940": "Recess", "1020": "Science(NT)/Sci(Chem)", "1120": "MTL", "1220": "Null"}}
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "CPA",
+        "1000": "Recess",
+        "1040": "Math",
+        "1120": "Eng",
+        "1200": "MTL",
+        "1240": "Break",
+        "1300": "Science(NT)/Sci( Phy/Bio)eS Bese Ne ote: aa aa",
+        "1500": null,
+        "1400": "EBS"
+    },
+    "Tuesday": {
+        "0800": "CPA",
+        "0900": "Eng",
+        "1000": "SS (NT)",
+        "1100": "Recess",
+        "1140": "Math",
+        "1240": "PE",
+        "1340": "MTL",
+        "1440": null
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "Math",
+        "1020": "Recess",
+        "1100": "PE",
+        "1200": "Eng",
+        "1240": "Break",
+        "1300": "Science(NT)/Sci(Chem)5m: Hun cn lin wat",
+        "1400": "MTL",
+        "1440": null
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "CPA",
+        "0940": "Science(NT)/Sci(Phy/Bio)teenie Wat ee epee",
+        "1040": "Recess",
+        "1120": "Eng",
+        "1220": "Math",
+        "1320": "EBS",
+        "1420": null
+    },
+    "Friday": {
+        "0840": "Math",
+        "0940": "Recess",
+        "1020": "Science(NT)/Sci(Chem)",
+        "1120": "MTL",
+        "1220": null
+    }
+}

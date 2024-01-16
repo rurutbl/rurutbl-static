@@ -5,28 +5,28 @@
         "0840": "Elect-POA/Art/D&T/NFS[5A]",
         "0900": "*Sci (Chem)",
         "0920": "Comb.SS",
-        "0940": "Null"
+        "0940": null
     },
     "Tuesday": {
         "0800": "*Sci (Phy/Bio)",
         "0820": "Eng",
         "0840": "Elect-POA/Art/D&T/NFS[SA]",
         "0900": "Math",
-        "0940": "Null",
+        "0940": null,
         "0920": "*Sci (Chem)"
     },
     "Wednesday": {
         "0820": "PE",
         "0840": "MTL",
         "0900": "Math",
-        "0920": "Null"
+        "0920": null
     },
     "Thursday": {
         "0800": "Math",
         "0820": "MTL",
         "0840": "Eng",
         "0900": "*Sci (Phy/Bio)",
-        "0940": "Null",
+        "0940": null,
         "0920": "Elect-POA/Art/D&T/NFS[SA]"
     },
     "Friday": {

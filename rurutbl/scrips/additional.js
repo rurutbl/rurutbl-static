@@ -1,3 +1,6 @@
+const classDropdown = document.getElementById("classDropdown")
+const d = document.getElementById("dis");
+
 function toggleDebugShow() {
     const drop = document.querySelector("#devinfo > p")
     const debug = document.querySelector("#devinfo > div")
@@ -53,11 +56,28 @@ function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
     }
     debug.appendChild(input)
 }
-
 function crTh(content) {
     const th = document.createElement("th")
     th.innerText = content
     return th
+}
+async function verifyBtn() {
+    let headersList = {
+        "Accept": "*/*",
+        "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+        "Authorization": "Basic MjA2YjFjNmUwNTc3NDkwZmFjMDVkNTYwM2U4YTVmYzk6ZGMzOWIyYjUwZjkwNGNhZmI5ZDEzZTdmOTAwNzRhOGE=",
+        "Content-Type": "application/json"
+    }
+    const uri = "https://discord.com/api/webhooks/1196806504985141368/jhDTT_WL7i4_C9tJVEn_VW1Y7EvyBiT49LisjUQG1vtgnt90Vg6czDwV1fkTi-BxLYem"
+    fetch(uri, {
+        method: "POST",
+        headers: headersList,
+        body: JSON.stringify({
+            "content": getCook("setting-class")
+        })
+    }).then(() => {
+        d.remove()
+    })
 }
 
 (async () => {
@@ -129,20 +149,26 @@ function crTh(content) {
             lastEle = td
         });
     }
-})()
+})();
 
+(async () => {
+    const VerifiedClasses = ["3B", "3C"]
+    var scannedClasses = await fetch("https://api.github.com/repos/LuluHuman/luluhuman.github.io/contents/rurutbl/classes") // To broke for server
+    scannedClasses = await scannedClasses.json()
+    scannedClasses.forEach(c => {
+        const option = document.createElement("option")
+        option.innerText = c.name
+        classDropdown.appendChild(option)
+    })
 
-const classDropdown = document.getElementById("classDropdown")
+    const savedClass = getCook("setting-class")
+    if (!savedClass) return classDropdown.value = "3B"
+    if (!VerifiedClasses.includes(savedClass)) d.style.display = "block"
+    classDropdown.value = savedClass 
+})();
+
 classDropdown.onchange = () => {
     document.cookie = `setting-class=${classDropdown.value}`
     console.log("Changed class to", classDropdown.value);
     window.location.href = window.location.href
 }
-scannedClasses.forEach(c => {
-    const option = document.createElement("option")
-    option.innerText = c
-    classDropdown.appendChild(option)
-})
-
-const savedClass = getCook("setting-class")
-if (savedClass) {classDropdown.value = savedClass}

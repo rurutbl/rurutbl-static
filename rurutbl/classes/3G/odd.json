@@ -1,1 +1,55 @@
-{"Monday": {"0800": "CCE", "0900": "*Sci (Phy/Bio)", "1000": "*Sci (Chem)", "1100": "Recess", "1140": "Math", "1240": "BreakMon", "1300": "Elect-POA [3E/3G/AG]", "1400": "Eng", "1500": "MTL", "1540": "Null"}, "Tuesday": {"0800": "Eng", "0900": "Recess", "0940": "Comb Hum", "1020": "Math", "1120": "*Sci (Chem)", "1220": "Elect-P.Geo/NFS/Art[3G]", "1320": "MTL", "1420": "Null"}, "Wednesday": {"0840": "CCE", "0940": "Recess", "1020": "Comb.SS", "1120": "Elect-POA [3E/3G/AG]", "1220": "Eng", "1300": "BreakWed", "1320": "MTL", "1420": "Elect-P.Geo/NFS/Art[3G]", "1620": "Null", "1520": "Comb Hum"}, "Thursday": {"0800": "CCE", "0840": "Comb.SS", "0920": "Recess", "1000": "Eng", "1040": "MTL", "1120": "Elect-P.Geo/NFS/Art[3G]", "1220": "*Sci (Phy/Bio)", "1320": "PE", "1420": "Null"}, "Friday": {"0840": "Math", "0940": "Recess", "1020": "Elect-POA |3E/3G/4G]", "1120": "PE", "1220": "MTL-HCL", "1320": "Null"}}
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "*Sci (Phy/Bio)",
+        "1000": "*Sci (Chem)",
+        "1100": "Recess",
+        "1140": "Math",
+        "1240": "Break",
+        "1300": "Elect-POA [3E/3G/AG]",
+        "1400": "Eng",
+        "1500": "MTL",
+        "1540": null
+    },
+    "Tuesday": {
+        "0800": "Eng",
+        "0900": "Recess",
+        "0940": "Comb Hum",
+        "1020": "Math",
+        "1120": "*Sci (Chem)",
+        "1220": "Elect-P.Geo/NFS/Art[3G]",
+        "1320": "MTL",
+        "1420": null
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "Recess",
+        "1020": "Comb.SS",
+        "1120": "Elect-POA [3E/3G/AG]",
+        "1220": "Eng",
+        "1300": "Break",
+        "1320": "MTL",
+        "1420": "Elect-P.Geo/NFS/Art[3G]",
+        "1620": null,
+        "1520": "Comb Hum"
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "Comb.SS",
+        "0920": "Recess",
+        "1000": "Eng",
+        "1040": "MTL",
+        "1120": "Elect-P.Geo/NFS/Art[3G]",
+        "1220": "*Sci (Phy/Bio)",
+        "1320": "PE",
+        "1420": null
+    },
+    "Friday": {
+        "0840": "Math",
+        "0940": "Recess",
+        "1020": "Elect-POA |3E/3G/4G]",
+        "1120": "PE",
+        "1220": "MTL-HCL",
+        "1320": null
+    }
+}
