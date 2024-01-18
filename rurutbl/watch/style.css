@@ -84,9 +84,28 @@ body > h1 {
   display: flex;
   justify-content: space-between;
   border-radius: 12px;
+  flex-wrap: wrap;
 }
 
 #track > li::marker,
 #track-skel > li::marker {
   content: none;
+}
+
+.rangeout {
+  width: 100%;
+  height: 40px;
+  display: flex;
+}
+.rangein {
+  width: 1px;
+  height: 100%;
+  background-color: #d84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  text-wrap: balance;
+  margin: 0 5px;
+  border-radius: 25px;
 }

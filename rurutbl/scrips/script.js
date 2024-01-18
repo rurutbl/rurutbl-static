@@ -7,6 +7,13 @@ async function app() {
     weekList = await fetch(document.listUrl)
     weekList = await weekList.json()
 
+    var getCommon = {}
+
+    const getCommonRecess = await fetch("/rurutbl/getCommonRecess")
+    const getCommonBreak = await fetch("/rurutbl/getCommonBreak")
+    getCommon["Recess"] = await getCommonRecess.json()
+    getCommon["Break"] = await getCommonBreak.json()
+
     //? Get Current Day
     const _dayI = curDate.getDay()
     const dayList = weekList[dayName[_dayI]]
@@ -33,7 +40,7 @@ async function app() {
             circp.setTitle(`Report on ${_nextDayList || dayName[0]} by ${reportTime}`)
                 .setSubtitle(`First lesson is ${nextday[reportTime]}`)
 
-            updateTrack(nextday)
+            updateTrack(nextday, _nextDayList || dayName[0])
 
             clearSkel("pb")
             document.elementsLoaded.pb = true
@@ -50,7 +57,7 @@ async function app() {
             return
         }
 
-        if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList)
+        if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList, dayName[_dayI])
         lastRegLesson = curLessont24.toString()
 
         if (_spoofDay) _spoofDay = new Date(_spoofDay).getTime() + 1000
@@ -103,11 +110,11 @@ async function app() {
         if (document.elementsLoaded.pb == false) clearSkel("pb")
     }
 
-    function updateTrack(dayList) {
+    function updateTrack(dayList, day) {
         document.getElementById("track").innerHTML = ""
 
         const timeList = Object.keys(dayList).toSorted()
-        timeList.forEach(lsnStartTime => {
+        timeList.forEach(async lsnStartTime => {
             const subject = dayList[lsnStartTime];
 
             const li = document.createElement("li")
@@ -121,26 +128,30 @@ async function app() {
             const minutes = d24.minutes == 0 ? "00" : d24.minutes
 
             subName.innerText = subject ? subject : "END"
+            subName.style.color = colorAssign[subject == null ? 0 : subject]
+
             subtime.innerText = `${hours}:${minutes} ${pref ? "PM" : "AM"}`
-            switch (subject) {
-                case "Break":
-                case "Recess":
-                case "Math, -SBB":
-                    subName.style.color = "grey"
-                    subtime.style.color = "grey"
-                    break;
-
-                case null:
-                    subName.style.color = "green"
-                    subtime.style.color = "green"
-                    break;
-
-                default:
-                    break;
-            }
+            subtime.style.color = colorAssign[subject == null ? 0 : subject]
 
             li.appendChild(subName)
             li.appendChild(subtime)
+
+            if (subject == "Recess" || subject == "Break") {
+                console.log(getCommon[subject], day);
+                const classes = getCommon[subject][day][lsnStartTime.toString()]
+                const rangeout = document.createElement("div")
+                rangeout.classList.add("rangeout")
+
+                const rangein = document.createElement("div")
+                rangein.classList.add("rangein")
+                rangein.style.width = (classes.length / 13) * 80 + "%"
+                rangein.style.backgroundColor = assignColor((classes.length / 13) * 100)
+                rangein.innerText = `${classes.length} (${classes.join(", ")})`
+
+                rangeout.append("Crowdedness")
+                rangeout.appendChild(rangein)
+                li.appendChild(rangeout)
+            }
             document.getElementById("track").appendChild(li)
         })
 
