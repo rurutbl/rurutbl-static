@@ -108,6 +108,7 @@
     },
     "Aria": {
         "name": "Aria",
+        "quote": "Wonderhoy!.",
         "sekai": [
             {
                 "name": "Miku",
@@ -120,7 +121,12 @@
         ],
         "birthday": "November 10",
         "moreInfo": [
-            "💬this girl never reply since last year"
+            "♏ Scorpio",
+            "🍌 Banana",
+            "🐕 Dog lover",
+            "😍 Deezlexik",
+            "🧡 Ambivert",
+            "🎧 Loves music"
         ],
         "assets": [
             "./assets/Untitled.png"
