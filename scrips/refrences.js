@@ -5,7 +5,7 @@ var lastRegLesson = null
 // const _timeDifference = curDate.getTime() - semstart.getTime();
 const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
 const setting_class = getCook("setting-class")
-document.listUrl = `/rurutbl/classes/${setting_class || "3B"}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
+document.listUrl = `/classes/${setting_class || "3B"}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
 
 //! Config
 let _spoofDay

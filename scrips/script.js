@@ -9,8 +9,8 @@ async function app() {
 
     var getCommon = {}
 
-    const getCommonRecess = await fetch("/rurutbl/api/getCommonRecess")
-    const getCommonBreak = await fetch("/rurutbl/api/getCommonBreak")
+    const getCommonRecess = await fetch("/api/getCommonRecess.json")
+    const getCommonBreak = await fetch("/api/getCommonBreak.json")
     getCommon["Recess"] = await getCommonRecess.json()
     getCommon["Break"] = await getCommonBreak.json()
 
@@ -27,7 +27,7 @@ async function app() {
 
         //  Get Current Lesson
         let curLessont24 = getCurrentLsn(timeList, curTime)
-        if (window.location.pathname == '/rurutbl/') updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
+        if (window.location.pathname == '/') updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
 
         let _lastInList = parseInt(timeList[timeList.length - 1])
         if (curTime > _lastInList) {
