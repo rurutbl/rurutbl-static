@@ -1,16 +1,15 @@
 app()
 async function app() {
     const curDate = returnDate()
-    var weekList
 
     //? Get Week
+    var weekList
     weekList = await fetch(document.listUrl)
     weekList = await weekList.json()
 
-    var getCommon = {}
-
     const getCommonRecess = await fetch("/api/getCommonRecess.json")
     const getCommonBreak = await fetch("/api/getCommonBreak.json")
+    var getCommon = {}
     getCommon["Recess"] = await getCommonRecess.json()
     getCommon["Break"] = await getCommonBreak.json()
 
@@ -27,7 +26,8 @@ async function app() {
 
         //  Get Current Lesson
         let curLessont24 = getCurrentLsn(timeList, curTime)
-        if (window.location.pathname == '/') updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
+
+        updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
 
         let _lastInList = parseInt(timeList[timeList.length - 1])
         if (curTime > _lastInList) {
@@ -117,40 +117,47 @@ async function app() {
         timeList.forEach(async lsnStartTime => {
             const subject = dayList[lsnStartTime];
 
-            const li = document.createElement("li")
-            const subName = document.createElement("div")
-            const subtime = document.createElement("div")
-
             const d24 = new Date24(lsnStartTime).toTimeHourObject()
 
             const pref = d24.hours > 12
             const hours = pref ? d24.hours - 12 : d24.hours
             const minutes = d24.minutes == 0 ? "00" : d24.minutes
 
-            subName.innerText = subject ? subject : "END"
-            subName.style.color = colorAssign[subject == null ? 0 : subject]
 
-            subtime.innerText = `${hours}:${minutes} ${pref ? "PM" : "AM"}`
-            subtime.style.color = colorAssign[subject == null ? 0 : subject]
+            const li = document.createElement("li")
+            if (!subject) {
+                li.classList.add("endLi")
+                li.innerHTML = `<span>END - ${hours}:${minutes} ${pref ? "PM" : "AM"}</span>`
+            } else {
+                li.classList.add("subjLi")
+                const subName = document.createElement("div")
+                const subtime = document.createElement("div")
 
-            li.appendChild(subName)
-            li.appendChild(subtime)
+                subName.innerText = subject 
+                subName.style.color = colorAssign[subject == null ? 0 : subject]
+                subtime.innerText = `${hours}:${minutes} ${pref ? "PM" : "AM"}`
+                subtime.style.color = colorAssign[subject == null ? 0 : subject]
 
-            if (subject == "Recess" || subject == "Break") {
-                const classes = getCommon[subject][day][lsnStartTime.toString()]
-                const rangeout = document.createElement("div")
-                rangeout.classList.add("rangeout")
+                li.appendChild(subName)
+                li.appendChild(subtime)
 
-                const rangein = document.createElement("div")
-                rangein.classList.add("rangein")
-                rangein.style.width = (classes.length / 13) * 80 + "%"
-                rangein.style.backgroundColor = assignColor((classes.length / 13) * 100)
-                rangein.innerText = `${classes.length} (${classes.join(", ")})`
+                if (subject == "Recess" || subject == "Break") {
+                    const classes = getCommon[subject][day][lsnStartTime.toString()]
+                    const rangeout = document.createElement("div")
+                    rangeout.classList.add("rangeout")
 
-                rangeout.append("Crowdedness")
-                rangeout.appendChild(rangein)
-                li.appendChild(rangeout)
+                    const rangein = document.createElement("div")
+                    rangein.classList.add("rangein")
+                    // rangein.style.width = (classes.length / 13) * 80 + "%"
+                    rangein.style.backgroundColor = assignColor((classes.length / 13) * 100)
+                    rangein.innerText = `${classes.length}` //(${classes.join(", ")})`
+
+                    rangeout.append("Crowdedness")
+                    rangeout.appendChild(rangein)
+                    li.appendChild(rangeout)
+                }
             }
+
             document.getElementById("track").appendChild(li)
         })
 

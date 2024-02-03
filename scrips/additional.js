@@ -24,6 +24,7 @@ function toggleTableShow() {
     debug.style.display = toggle ? "flex" : "none"
 }
 function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
+    if (!window.location.pathname == '/') return
     const debugJson = {
         "Date": `${curDate.getMonth() + 1}/${curDate.getDate()}/${curDate.getFullYear()} ${curDate.getHours()}:${curDate.getMinutes()}:${curDate.getSeconds()}`,
         "Stated Day": dayName[curDate.getDay()],
@@ -61,25 +62,6 @@ function crTh(content) {
     th.innerText = content
     return th
 }
-async function verifyBtn() {
-    let headersList = {
-        "Accept": "*/*",
-        "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-        "Authorization": "Basic MjA2YjFjNmUwNTc3NDkwZmFjMDVkNTYwM2U4YTVmYzk6ZGMzOWIyYjUwZjkwNGNhZmI5ZDEzZTdmOTAwNzRhOGE=",
-        "Content-Type": "application/json"
-    }
-    const uri = "https://discord.com/api/webhooks/1196806504985141368/jhDTT_WL7i4_C9tJVEn_VW1Y7EvyBiT49LisjUQG1vtgnt90Vg6czDwV1fkTi-BxLYem"
-    fetch(uri, {
-        method: "POST",
-        headers: headersList,
-        body: JSON.stringify({
-            "content": getCook("setting-class")
-        })
-    }).then(() => {
-        d.remove()
-    })
-}
-
 (async () => {
     const fulltbl = document.getElementById("fulltbl")
 

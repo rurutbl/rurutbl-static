@@ -27,13 +27,8 @@ body {
 
 #track > li,
 #track-skel > li {
-  border: #555 solid 1px;
-  padding: 10px;
-  margin: 10px 20px;
   display: flex;
-  justify-content: space-between;
   border-radius: 12px;
-  flex-wrap: wrap;
 }
 
 #track > li::marker,
@@ -41,6 +36,29 @@ body {
   content: none;
 }
 
+.subjLi,
+#track-skel > li {
+  padding: 10px;
+  margin: 10px 20px;
+  border: #555 solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.endLi {
+  height: 0;
+  border-top: thin solid gray;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 20px 0.5rem 20px;
+}
+.endLi > span {
+  padding: 2px 4px;
+  background: #212529;
+  color: gray;
+}
 .progress-bar-container {
   max-height: 300px;
   max-width: 300px;
@@ -161,7 +179,7 @@ h2 > select {
   align-items: center;
 }
 .rangein {
-  width: 1px;
+  width: 20px;
   height: 100%;
   background-color: #d84;
   display: flex;
