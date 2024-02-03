@@ -1,4 +1,3 @@
-document.elementsLoaded = { "track": false, "pb": false }
 document.loopingOn = true
 var lastRegLesson = null
 
@@ -92,12 +91,6 @@ function getCurrentLsn(timeList, curTime) {
         if (_beforeNow && _lastSavedisLess && _default) curLessont24 = new Date24(intTime)
     })
     return curLessont24 == -Infinity ? null : curLessont24
-}
-function clearSkel(elementName) {
-    if (document.elementsLoaded[elementName]) return
-    document.getElementById(elementName + "-skel").remove();
-    document.getElementById(elementName).style.display = "block"
-    document.elementsLoaded[elementName] = true
 }
 
 function getCook(cookiename) {

@@ -27,7 +27,7 @@ async function app() {
         //  Get Current Lesson
         let curLessont24 = getCurrentLsn(timeList, curTime)
 
-        updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
+        if (window.location.pathname == "/") updateDebug(curDate, curLessont24, dayList, semstart, weekNumber)
 
         let _lastInList = parseInt(timeList[timeList.length - 1])
         if (curTime > _lastInList) {
@@ -42,8 +42,7 @@ async function app() {
 
             updateTrack(nextday, _nextDayList || dayName[0])
 
-            clearSkel("pb")
-            document.elementsLoaded.pb = true
+            document.Loaded.pb = true
             return
         }
         if (curLessont24 == null) {
@@ -51,9 +50,6 @@ async function app() {
             circp.setTitle(`idk wait until monday`)
 
             updateTrack({})
-
-            clearSkel("pb")
-            document.elementsLoaded.pb = true
             return
         }
 
@@ -61,8 +57,8 @@ async function app() {
         lastRegLesson = curLessont24.toString()
 
         if (_spoofDay) _spoofDay = new Date(_spoofDay).getTime() + 1000
-
         if (document.loopingOn == false) return
+
         updateCirc(Time24, curLessont24)
         setTimeout(updatePage, 1000)
     }
@@ -106,8 +102,6 @@ async function app() {
         const remainingPercentage = ((totalSubjectDuration - remainingMinutes) / totalSubjectDuration) * 100;
 
         circp.progcirc.style.setProperty("--prog", remainingPercentage);
-
-        if (document.elementsLoaded.pb == false) clearSkel("pb")
     }
 
     function updateTrack(dayList, day) {
@@ -133,7 +127,7 @@ async function app() {
                 const subName = document.createElement("div")
                 const subtime = document.createElement("div")
 
-                subName.innerText = subject 
+                subName.innerText = subject
                 subName.style.color = colorAssign[subject == null ? 0 : subject]
                 subtime.innerText = `${hours}:${minutes} ${pref ? "PM" : "AM"}`
                 subtime.style.color = colorAssign[subject == null ? 0 : subject]
@@ -160,7 +154,5 @@ async function app() {
 
             document.getElementById("track").appendChild(li)
         })
-
-        if (document.elementsLoaded.track == false) clearSkel("track")
     }
 }

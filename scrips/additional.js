@@ -1,4 +1,4 @@
-const classDropdown = document.getElementById("classDropdown")
+const classDropdown = document.querySelector("#classDropdown > span")
 const d = document.getElementById("dis");
 
 function toggleDebugShow() {
@@ -24,7 +24,6 @@ function toggleTableShow() {
     debug.style.display = toggle ? "flex" : "none"
 }
 function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
-    if (!window.location.pathname == '/') return
     const debugJson = {
         "Date": `${curDate.getMonth() + 1}/${curDate.getDate()}/${curDate.getFullYear()} ${curDate.getHours()}:${curDate.getMinutes()}:${curDate.getSeconds()}`,
         "Stated Day": dayName[curDate.getDay()],
@@ -135,18 +134,18 @@ function crTh(content) {
 
 (async () => {
     const VerifiedClasses = ["3B", "3C"]
-    var scannedClasses = await fetch(window.location.hostname == "127.0.0.1" ? "/api/apiTest.json" : "https://api.github.com/repos/rurutbl/rurutbl.github.io/tree/main/classes") // To broke for server
-    scannedClasses = await scannedClasses.json()
-    scannedClasses.forEach(c => {
-        const option = document.createElement("option")
-        option.innerText = c.name
-        classDropdown.appendChild(option)
-    })
+    // var scannedClasses = await fetch(window.location.hostname == "127.0.0.1" ? "/api/apiTest.json" : "https://api.github.com/repos/rurutbl/rurutbl.github.io/contents/classes") // To broke for server
+    // scannedClasses = await scannedClasses.json()
+    // scannedClasses.forEach(c => {
+    //     const option = document.createElement("option")
+    //     option.innerText = c.name
+    //     classDropdown.appendChild(option)
+    // })
 
     const savedClass = getCook("setting-class")
-    if (!savedClass) return classDropdown.value = "3B"
+    if (!savedClass) return classDropdown.innerText = `Class 3B`
     if (!VerifiedClasses.includes(savedClass)) d.style.display = "block"
-    classDropdown.value = savedClass
+    classDropdown.innerText = `Class ${savedClass}`
 })();
 
 classDropdown.onchange = () => {
