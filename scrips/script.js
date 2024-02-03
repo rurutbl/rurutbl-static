@@ -9,8 +9,8 @@ async function app() {
 
     var getCommon = {}
 
-    const getCommonRecess = await fetch("/rurutbl/getCommonRecess")
-    const getCommonBreak = await fetch("/rurutbl/getCommonBreak")
+    const getCommonRecess = await fetch("/rurutbl/api/getCommonRecess")
+    const getCommonBreak = await fetch("/rurutbl/api/getCommonBreak")
     getCommon["Recess"] = await getCommonRecess.json()
     getCommon["Break"] = await getCommonBreak.json()
 
@@ -137,7 +137,6 @@ async function app() {
             li.appendChild(subtime)
 
             if (subject == "Recess" || subject == "Break") {
-                console.log(getCommon[subject], day);
                 const classes = getCommon[subject][day][lsnStartTime.toString()]
                 const rangeout = document.createElement("div")
                 rangeout.classList.add("rangeout")

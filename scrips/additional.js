@@ -153,7 +153,7 @@ async function verifyBtn() {
 
 (async () => {
     const VerifiedClasses = ["3B", "3C"]
-    var scannedClasses = await fetch(window.location.hostname == "127.0.0.1" ? "/apiTest" : "https://api.github.com/repos/LuluHuman/luluhuman.github.io/contents/rurutbl/classes") // To broke for server
+    var scannedClasses = await fetch(window.location.hostname == "127.0.0.1" ? "/api/apiTest" : "https://api.github.com/repos/LuluHuman/luluhuman.github.io/contents/rurutbl/classes") // To broke for server
     scannedClasses = await scannedClasses.json()
     scannedClasses.forEach(c => {
         const option = document.createElement("option")

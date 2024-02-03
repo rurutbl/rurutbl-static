@@ -1,2 +1,6 @@
 apiTest
 wxsat2499.zip
+node_modules
+package.json
+package-lock.json
+prettier.config.js

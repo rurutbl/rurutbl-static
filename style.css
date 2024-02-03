@@ -1,192 +1,175 @@
-:root {
-  --background-dark: #212529;
-  --color-dark: white;
-}
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap");
+@import url("https://cdn.tailwindcss.com");
 
 body {
-  background: var(--background-dark);
-  color: var(--color-dark);
+  background: #212529;
+  color: white;
   font-family: "Roboto", sans-serif;
-}
-/* header */
-header {
+  margin: 0px;
   display: flex;
-  overflow: hidden;
-  justify-items: center;
-  padding: min(8vw, 59px);
   align-items: center;
-}
-
-header > img {
-  border-radius: 100%;
-  width: 40vw;
-  min-width: 100px;
-  max-width: 10pc;
-  height: auto;
-}
-
-header > div > h2 {
-  font-size: min(3vh, 44px);
-  margin: 0px 10px;
-}
-
-header > div > div {
-  display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-body > header > div > h2 > span {
-  background-color: #00aaff;
+#track,
+#track-skel,
+#btime {
+  padding: 24px 0px;
+  margin: 15px 0px;
   border-radius: 15px;
-  padding: 0px 5px;
-  font-size: 2vh;
-  margin: 0px 10px;
+  min-width: min(600px, 100vw);
 }
 
-@font-face {
-  font-family: s1;
-  src: url("/assets/s1.ttf");
-}
-
-#greeting {
+#track > li,
+#track-skel > li {
+  border: #555 solid 1px;
+  padding: 10px;
+  margin: 10px 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#greeting > span {
-  font-family: s1;
-  background: white;
-  color: black;
-  font-weight: 600;
-  padding: 5px;
-  width: 62px;
-  text-align: center;
-  border-radius: 15px;
-  font-size: 20px;
-}
-/* info */
-info {
-  display: flex;
-  flex-direction: column;
-  margin: 0px 10px;
-}
-
-info > span:nth-child(1) {
-  color: #999999;
-  font-size: min(max(24px, 19vw), 23px);
-}
-info > span:nth-child(2) {
-  font-size: min(14px, 15px);
-}
-info > span:nth-child(1)::after {
-  content: ": ";
-}
-
-/* Socal-Links */
-body > header > div > div > img {
-  width: min(16px, 10vw);
-  padding: 4px;
-  margin: 4px;
-  transition: 0.5s;
-  background-color: #333;
-  border-radius: 15%;
-}
-
-body > header > div > div > img:hover {
-  transition: 0.5s;
-  padding-right: 50px;
-}
-
-/* Description */
-description {
-  display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 12px;
   flex-wrap: wrap;
 }
 
-description > links,
-description > about {
-  margin: 10px;
-  min-width: min(340px, 90vw);
-  box-shadow: 0px 0px 4px black;
-  display: block;
-  border-radius: 5px;
-  background: #111;
-  height: fit-content;
+#track > li::marker,
+#track-skel > li::marker {
+  content: none;
 }
 
-links > h3 {
+.progress-bar-container {
+  max-height: 300px;
+  max-width: 300px;
+  height: 85vw;
+  width: 85vw;
+  margin: 21px;
+}
+.progress-bar {
+  background: radial-gradient(closest-side, #212529 92%, transparent 80% 100%),
+    conic-gradient(rgb(255, 255, 255) calc(var(--prog) * 1%), grey 0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  /* to center the percentage value */
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-
-links > h3::before {
-  content: "\e157";
-  font-family: "Material Symbols Outlined";
-  padding: 5px;
+.progress-bar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-links > div {
+li.active {
+  outline: white 1px solid;
+}
+
+#devinfo {
   display: flex;
   align-items: center;
-  margin: 5px;
+  flex-direction: column;
+}
+#devinfo > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
-links > div:hover {
-  background: #333;
+table {
+  border-collapse: collapse;
+  width: 800px;
+}
+
+table > tr:nth-child(odd) {
+  background-color: #333;
+}
+
+td,
+th {
+  text-align: center;
+  padding: 8px;
+  border: #555 solid 1px;
+}
+
+td {
+  font-size: 0.7em;
+  color: #ffffffaa;
+}
+
+.px40 {
+  width: 40px;
+  height: 19px;
+  background-color: grey;
+  border-radius: 25px;
+}
+
+.dropdown-parent {
+  width: 100vw;
+}
+.dropdown {
+  border-top: #555 solid 1px;
+  border-bottom: #555 solid 1px;
+
+  width: -webkit-fill-available;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
 }
 
-links > div > img {
-  width: 32px;
-  margin: 12px;
-  box-shadow: white 0px 0px 12px;
-  background: white;
-}
-
-links > div > span {
-  color: white;
-  text-decoration: underline dashed 1px orange;
-}
-
-about > h3 {
-  display: flex;
-  align-items: center;
-}
-
-about > h3::before {
-  content: "\e853";
+p.dropdown::before {
   font-family: "Material Symbols Outlined";
-  padding: 5px;
+  margin-right: 10px;
+  content: "\e5cc";
 }
 
-about > p {
-  margin: 5px;
-  padding: 12px;
+p.dropdown.active::before {
+  content: "\e5cf";
 }
 
-about > ul > li::marker {
-  content: "";
+#table > div {
+  max-width: 100%;
+  overflow-x: scroll;
+  padding: 30px 0;
 }
-about > ul > li {
+
+h2 {
+  text-align: center;
+}
+h2 > select {
+  font-size: 1em;
+  color: #d84;
+  border: none;
+  background-color: transparent;
+}
+
+.rangeout {
+  width: 100%;
+  height: 20px;
   display: flex;
   align-items: center;
-  padding: 6px 0px;
 }
-about > ul {
-  padding: 12px;
-}
-
-.span-g {
-  color: #999999;
-}
-
-footer {
-  background: #111;
-  position: fixed;
-  width: 100vw;
-  left: 0px;
-  bottom: 0;
+.rangein {
+  width: 1px;
+  height: 100%;
+  background-color: #d84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  text-wrap: balance;
+  margin: 0 5px;
+  border-radius: 25px;
+  font-size: 13px;
 }
