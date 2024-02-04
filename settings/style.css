@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+
+:root {
+  --color-bg: #2f353b;
+  --color-txt: #ffffff;
+  --color-grey: #727272;
+
+  --color-bg-reverse: #ffffff;
+  --color-txt-reverse: #000000;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-txt);
+
+  font-family: sans-serif;
+
+  margin: 0px;
+  padding: 0 50px;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  width: 100%;
+}
+
+/* ClassSelector */
+
+#ClassSelector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#ClassSelector > div {
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 2px;
+  width: fit-content;
+}
+
+#ClassSelector > div > button {
+  background-color: var(--color-bg-reverse);
+  color: var(--color-txt-reverse);
+  width: 2.5em;
+  height: 2.5em;
+  border: none;
+  text-align: center;
+
+  outline: #000000 1px solid;
+}
+
+#ClassSelector > div > button:hover {
+  background-color: rgb(202, 202, 202);
+  color: var(--color-txt);
+}
+
+#ClassSelector > div > button.LevelButtonActive {
+  background-color: #d84;
+  color: var(--color-txt);
+}
+
+#ClassSelector > div > button.ClassButtonActive {
+  background-color: #d84;
+  color: var(--color-txt);
+}
+
+/* back */
+
+.backButton {
+  display: flex;
+  width: 100%;
+}
+
+.backButton > a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 15px 0px;
+  border-radius: 25px;
+  border: white 2px solid;
+  display: flex;
+  align-items: center;
+}
+
+.backButton > a::before {
+  font-family: "Material Symbols Outlined";
+  margin-right: 10px;
+  content: "arrow_back";
+}

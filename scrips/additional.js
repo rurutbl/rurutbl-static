@@ -1,5 +1,5 @@
 const classDropdown = document.querySelector("#classDropdown > span")
-const d = document.getElementById("dis");
+// const d = document.getElementById("dis");
 
 function toggleDebugShow() {
     const drop = document.querySelector("#devinfo > p")
@@ -133,23 +133,11 @@ function crTh(content) {
 })();
 
 (async () => {
-    const VerifiedClasses = ["3B", "3C"]
-    // var scannedClasses = await fetch(window.location.hostname == "127.0.0.1" ? "/api/apiTest.json" : "https://api.github.com/repos/rurutbl/rurutbl.github.io/contents/classes") // To broke for server
-    // scannedClasses = await scannedClasses.json()
-    // scannedClasses.forEach(c => {
-    //     const option = document.createElement("option")
-    //     option.innerText = c.name
-    //     classDropdown.appendChild(option)
-    // })
+    // const VerifiedClasses = ["3B", "3C"]
+    // if (!VerifiedClasses.includes(className)) d.style.display = "block"
 
-    const savedClass = getCook("setting-class")
-    if (!savedClass) return classDropdown.innerText = `Class 3B`
-    if (!VerifiedClasses.includes(savedClass)) d.style.display = "block"
-    classDropdown.innerText = `Class ${savedClass}`
+    const savedClass = settings.class
+    const className = savedClass.level + savedClass.class
+    classDropdown.innerText = `Class ${className}`
 })();
 
-classDropdown.onchange = () => {
-    document.cookie = `setting-class=${classDropdown.value}`
-    console.log("Changed class to", classDropdown.value);
-    window.location.href = window.location.href
-}

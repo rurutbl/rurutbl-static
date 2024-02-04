@@ -3,8 +3,8 @@ var lastRegLesson = null
 
 // const _timeDifference = curDate.getTime() - semstart.getTime();
 const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
-const setting_class = getCook("setting-class")
-document.listUrl = `/classes/${setting_class || "3B"}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
+let settings = loadSettings()
+document.listUrl = `/classes/${settings.class.level}/${settings.class.class}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
 
 //! Config
 let _spoofDay
@@ -101,4 +101,17 @@ function assignColor(percentage) {
     if (percentage <= 30) return "#0a0"
     if (percentage <= 60 && percentage >= 30) return "#FFC107"
     if (percentage >= 60) return "#F00"
+}
+
+function loadSettings() {
+    const savedSettings = localStorage.getItem("settings")
+    const parsedSettings = JSON.parse(savedSettings)
+    if (parsedSettings) return parsedSettings;
+
+    return {
+        class: {
+            level: "3",
+            class: "B"
+        }
+    }
 }
