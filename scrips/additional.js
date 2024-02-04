@@ -1,4 +1,4 @@
-const classDropdown = document.querySelector("#classDropdown > span")
+const classTitle = document.querySelector("#classTitle > span")
 // const d = document.getElementById("dis");
 
 function toggleDebugShow() {
@@ -138,6 +138,6 @@ function crTh(content) {
 
     const savedClass = settings.class
     const className = savedClass.level + savedClass.class
-    classDropdown.innerText = `Class ${className}`
+    classTitle.innerText = `Class ${className}`
 })();
 

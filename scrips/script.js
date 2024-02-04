@@ -41,8 +41,6 @@ async function app() {
                 .setSubtitle(`First lesson is ${nextday[reportTime]}`)
 
             updateTrack(nextday, _nextDayList || dayName[0])
-
-            document.Loaded.pb = true
             return
         }
         if (curLessont24 == null) {
@@ -80,8 +78,10 @@ async function app() {
         if (curTime < timeList[0]) {
             circp.setTitle(`Time until Start class (${dayList[timeList[0]]})`)
         } else {
-            circp.setTitle(`${dayList[timeList[i - 1]]}`)
-                .setSubtitle(`Time until <b>${dayList[curLessont24.toString()]}</b>`)
+            const title = dayList[timeList[i - 1]] == "{SciElec}" ? settings.Elec.Sci : dayList[timeList[i - 1]]
+            const nextSub = dayList[timeList[i]] == null ? "Time left" : `Time until <b>${dayList[timeList[i]]}</b>`
+            circp.setTitle(`${title}`)
+                .setSubtitle(nextSub)
         }
 
         // Countdown
@@ -128,27 +128,40 @@ async function app() {
                 const subtime = document.createElement("div")
 
                 subName.innerText = subject
-                subName.style.color = colorAssign[subject == null ? 0 : subject]
+                // subName.style.color = colorAssign[subject == null ? 0 : subject]
                 subtime.innerText = `${hours}:${minutes} ${pref ? "PM" : "AM"}`
-                subtime.style.color = colorAssign[subject == null ? 0 : subject]
 
                 li.appendChild(subName)
                 li.appendChild(subtime)
 
-                if (subject == "Recess" || subject == "Break") {
-                    const classes = getCommon[subject][day][lsnStartTime.toString()]
-                    const rangeout = document.createElement("div")
-                    rangeout.classList.add("rangeout")
+                switch (subject) {
+                    case "Recess":
+                    case "Break":
+                        {
+                            const classes = getCommon[subject][day][lsnStartTime.toString()]
+                            const rangeout = document.createElement("div")
 
-                    const rangein = document.createElement("div")
-                    rangein.classList.add("rangein")
-                    // rangein.style.width = (classes.length / 13) * 80 + "%"
-                    rangein.style.backgroundColor = assignColor((classes.length / 13) * 100)
-                    rangein.innerText = `${classes.length}` //(${classes.join(", ")})`
+                            subtime.style.opacity = 0.5
+                            subName.style.opacity = 0.5
+                            rangeout.classList.add("rangeout")
 
-                    rangeout.append("Crowdedness")
-                    rangeout.appendChild(rangein)
-                    li.appendChild(rangeout)
+                            const rangein = document.createElement("div")
+                            rangein.classList.add("rangein")
+                            // rangein.style.width = (classes.length / 13) * 80 + "%"
+                            rangein.style.backgroundColor = assignColor((classes.length / 13) * 100)
+                            rangein.innerText = `${classes.length}` //(${classes.join(", ")})`
+
+                            rangeout.append("Crowdedness")
+                            rangeout.appendChild(rangein)
+                            li.appendChild(rangeout)
+                            break;
+                        }
+
+                    case "{SciElec}":
+                        subName.innerText = settings.Elec.Sci || subject
+
+                    default:
+                        break;
                 }
             }
 

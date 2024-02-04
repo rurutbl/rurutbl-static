@@ -11,12 +11,12 @@
         "1400": "Elect-POA/NFS/Art[3C]"
     },
     "Tuesday": {
-        "0800": "*Sci (Chem)",
+        "0800": "Chemestry",
         "0900": "Eng",
         "0940": "MTL",
         "1040": "Recess",
         "1120": "PE",
-        "1220": "Comb.SS",
+        "1220": "Social Studies",
         "1320": "Elect-POA/NFS/Art[3C]",
         "1420": null
     },
@@ -35,7 +35,7 @@
         "0840": "Math",
         "0940": "D&T(NT)/Science(NT)/Sci(Phy/Bio)",
         "1040": "Recess",
-        "1120": "*Sci (Chem)",
+        "1120": "Chemestry",
         "1220": "PE",
         "1320": "Comb Hum",
         "1420": null
@@ -44,7 +44,7 @@
         "0840": "Eng",
         "0940": "MTL",
         "1020": "Recess",
-        "1100": "Comb.SS",
+        "1100": "Social Studies",
         "1140": "Math",
         "1220": null
     }

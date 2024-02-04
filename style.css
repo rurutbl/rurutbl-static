@@ -4,9 +4,9 @@
 @import url("./skeli.css");
 
 :root {
-  --color-bg: #2f353b;
-  --color-txt: #ffffff;
-  --color-grey: #727272;
+  --color-bg: #222;
+  --color-txt: #fff;
+  --color-grey: #9799a0;
 }
 
 body {
@@ -23,6 +23,12 @@ body {
   margin: 0px;
   width: 100vw;
   overflow-x: hidden;
+}
+
+body > a {
+  width: 100%;
+  text-align: center;
+  color: #d84;
 }
 
 /* Track */
@@ -209,21 +215,21 @@ p.dropdown.active::before {
 
 /* Settings */
 
-#classDropdown {
+#classTitle {
   margin-top: 40px;
   width: 100vw;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-#classDropdown > a {
+#classTitle > a {
   color: var(--color-txt);
   font-size: inherit;
   text-decoration: none;
 }
 
-#classDropdown > a::after {
+#classTitle > a::after {
   font-family: "Material Symbols Outlined";
-  content: "\e3c9";
+  content: "\e8b8";
+  margin-left: 10px;
 }

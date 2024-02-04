@@ -1,25 +1,25 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "*Sci (Phy/Bio)",
+        "0900": "{SciElec}",
         "1000": "Recess",
         "1040": "Eng",
         "1120": "Math",
         "1220": "Comb Hum",
         "1320": "MTL",
         "1420": "Break",
-        "1440": "Elect-AM/POA [4E]",
+        "1440": "Elect-AM/POA",
         "1540": null
     },
     "Tuesday": {
         "0800": "Comb Hum",
-        "0840": "Comb.SS",
+        "0840": "Social Studies",
         "0920": "Recess",
         "1000": "Eng",
         "1040": "MTL",
-        "1120": "*Sci (Phy/Bio)",
+        "1120": "{SciElec}",
         "1220": "Elect-Com/D&T/Art[4E]",
-        "1320": "Elect-AM/POA [4E]",
+        "1320": "Elect-AM/POA",
         "1420": null
     },
     "Wednesday": {
@@ -27,8 +27,8 @@
         "0940": "Math",
         "1040": "Recess",
         "1120": "Eng",
-        "1220": "Comb.SS",
-        "1320": "Elect-AM/POA [4E]",
+        "1220": "Social Studies",
+        "1320": "Elect-AM/POA",
         "1420": "Break",
         "1440": "MTL",
         "1620": null,
@@ -41,13 +41,13 @@
         "1020": "Eng",
         "1120": "PE",
         "1220": "Elect-Com/D&T/Art[4E]",
-        "1320": "*Sci (Chem)",
+        "1320": "Chemestry",
         "1420": null
     },
     "Friday": {
         "0840": "PE",
         "0940": "Recess",
-        "1020": "*Sci (Chem)",
+        "1020": "Chemestry",
         "1120": "Math",
         "1220": "MTL-HCL",
         "1320": null

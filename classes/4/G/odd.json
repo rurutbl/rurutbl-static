@@ -3,9 +3,9 @@
         "0800": "CCE",
         "0900": "Recess",
         "0940": "PE",
-        "1040": "*Sci (Phy/Bio)",
+        "1040": "{SciElec}",
         "1140": "Eng",
-        "1220": "Comb.SS",
+        "1220": "Social Studies",
         "1320": "MTL",
         "1420": "Break",
         "1440": "Math",
@@ -16,8 +16,8 @@
         "0900": "Math",
         "1000": "Recess",
         "1040": "MTL",
-        "1120": "Elect-POA/P.GeoP.Lit [4F & 4G]",
-        "1220": "Elect-POA [3E/3G/4G]",
+        "1120": "Elect-POA/P.GeoP.Lit",
+        "1220": "Elect-POA",
         "1320": "Comb Hum",
         "1420": null
     },
@@ -25,21 +25,21 @@
         "0840": "CCE",
         "0940": "PE",
         "1040": "Recess",
-        "1120": "*Sci (Chem)",
-        "1220": "Elect-POA/P.GeoP.Lit [4F & 4G]",
+        "1120": "Chemestry",
+        "1220": "Elect-POA/P.GeoP.Lit",
         "1320": "Eng",
         "1420": "Break",
         "1440": "MTL",
         "1620": null,
-        "1520": "*Sci (Phy/Bio)"
+        "1520": "{SciElec}"
     },
     "Thursday": {
         "0800": "CCE",
         "0840": "MTL",
         "0940": "Recess",
-        "1020": "Elect-POA [3E/3GAG]",
-        "1120": "*Sci (Chem)",
-        "1220": "Comb.SS",
+        "1020": "Elect-POA",
+        "1120": "Chemestry",
+        "1220": "Social Studies",
         "1300": "Eng",
         "1340": "Comb Hum",
         "1420": null
@@ -47,8 +47,8 @@
     "Friday": {
         "0840": "Math",
         "0940": "Recess",
-        "1020": "Elect-POA/P.Geo/P.Lit [4F & 4G]",
-        "1120": "Elect-POA [3E/3G/4G]",
+        "1020": "Elect-POA/P.Geo/P.Lit",
+        "1120": "Elect-POA",
         "1220": "MTL-HCL",
         "1320": null
     }

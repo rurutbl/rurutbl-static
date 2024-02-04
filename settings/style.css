@@ -1,93 +1,101 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 
 :root {
-  --color-bg: #2f353b;
-  --color-txt: #ffffff;
-  --color-grey: #727272;
+	--color-bg: #222;
+	--color-txt: #fff;
+	--color-grey: #9799a0;
 
-  --color-bg-reverse: #ffffff;
-  --color-txt-reverse: #000000;
+	--color-bg-reverse: #ffffff;
+	--color-txt-reverse: #000000;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-txt);
+	background: var(--color-bg);
+	color: var(--color-txt);
 
-  font-family: sans-serif;
+	font-family: sans-serif;
 
-  margin: 0px;
-  padding: 0 50px;
-  overflow-x: hidden;
+	margin: 0px;
+	padding: 0 50px;
+	overflow-x: hidden;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.settingsSegment {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 h1 {
-  width: 100%;
+	width: 100%;
 }
 
 /* ClassSelector */
 
-#ClassSelector {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.settingsSegment > div > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #212121;
+	padding: 10px;
 }
-#ClassSelector > div {
-  border-radius: 25px;
-  overflow: hidden;
-  margin: 2px;
-  width: fit-content;
-}
-
-#ClassSelector > div > button {
-  background-color: var(--color-bg-reverse);
-  color: var(--color-txt-reverse);
-  width: 2.5em;
-  height: 2.5em;
-  border: none;
-  text-align: center;
-
-  outline: #000000 1px solid;
+.settingsSegment > div > div > div {
+	border-radius: 25px;
+	overflow: hidden;
+	margin: 2px;
+	width: fit-content;
 }
 
-#ClassSelector > div > button:hover {
-  background-color: rgb(202, 202, 202);
-  color: var(--color-txt);
+.settingsSegment > div > div > div > button {
+	background-color: var(--color-bg-reverse);
+	color: var(--color-txt-reverse);
+	min-width: 2.5em;
+	height: 2.5em;
+	border: none;
+	text-align: center;
+
+	outline: #000000 1px solid;
+	cursor: pointer;
 }
 
-#ClassSelector > div > button.LevelButtonActive {
-  background-color: #d84;
-  color: var(--color-txt);
+.settingsSegment > div > div > div > button:hover {
+	background-color: rgb(202, 202, 202);
+	color: var(--color-txt);
 }
 
-#ClassSelector > div > button.ClassButtonActive {
-  background-color: #d84;
-  color: var(--color-txt);
+#ClassSelector > div > button.LevelButtonActive,
+#ClassSelector > div > button.ClassButtonActive,
+#settingsSegment-electives > div > div > div > button.LevelElecActive {
+	background-color: #d84;
+	color: var(--color-txt);
 }
 
 /* back */
 
 .backButton {
-  display: flex;
-  width: 100%;
+	display: flex;
+	width: 100%;
 }
 
 .backButton > a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  margin: 15px 0px;
-  border-radius: 25px;
-  border: white 2px solid;
-  display: flex;
-  align-items: center;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	margin: 15px 0px;
+	border-radius: 25px;
+	border: white 2px solid;
+	display: flex;
+	align-items: center;
 }
 
 .backButton > a::before {
-  font-family: "Material Symbols Outlined";
-  margin-right: 10px;
-  content: "arrow_back";
+	font-family: "Material Symbols Outlined";
+	margin-right: 10px;
+	content: "arrow_back";
+}
+
+/* export */
+#export {
+	width: 200px;
+	overflow-x: scroll;
 }

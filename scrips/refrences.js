@@ -1,20 +1,3 @@
-document.loopingOn = true
-var lastRegLesson = null
-
-// const _timeDifference = curDate.getTime() - semstart.getTime();
-const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
-let settings = loadSettings()
-document.listUrl = `/classes/${settings.class.level}/${settings.class.class}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
-
-//! Config
-let _spoofDay
-let semstart = "Disabled"// new Date('2024-1-3');
-
-//! Static refrences
-const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
-const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
-const colorAssign = { "Recess": "grey", "Break": "grey", 0: "green" }
-
 //! Classes
 class Date24 {
     constructor(t24) {
@@ -78,6 +61,32 @@ class circularTimer {
         return this
     }
 }
+class db {
+    constructor() {
+        this.settings = {
+            class: {
+                level: "3",
+                class: "B"
+            },
+            Elec: {
+                Sci: "Phy/Bio",
+            }
+        }
+    }
+    get() {
+        const savedSettings = localStorage.getItem("settings")
+        const parsedSettings = JSON.parse(savedSettings)
+        if (parsedSettings) this.settings = parsedSettings
+
+        return this.settings
+    }
+    set(type, key, value) {
+        this.settings[type][key] = value
+        ClassSelectorLabel.innerText = `Selected: ${this.settings.class.level || "_"}${this.settings.class.class || "_"}`
+
+        localStorage.setItem('settings', JSON.stringify(this.settings))
+    }
+}
 
 //! Functions
 function returnDate() { return _spoofDay ? new Date(_spoofDay) : new Date() }
@@ -103,15 +112,21 @@ function assignColor(percentage) {
     if (percentage >= 60) return "#F00"
 }
 
-function loadSettings() {
-    const savedSettings = localStorage.getItem("settings")
-    const parsedSettings = JSON.parse(savedSettings)
-    if (parsedSettings) return parsedSettings;
+//! Variables
+document.loopingOn = true
+var lastRegLesson = null
 
-    return {
-        class: {
-            level: "3",
-            class: "B"
-        }
-    }
-}
+// const _timeDifference = curDate.getTime() - semstart.getTime();
+const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
+const dbStore = new db()
+const settings = dbStore.get()
+document.listUrl = `/classes/${settings.class.level}/${settings.class.class}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
+
+//! Config
+let _spoofDay
+let semstart = "Disabled"// new Date('2024-1-3');
+
+//! Static refrences
+const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
+const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
+const colorAssign = { "Recess": "grey", "Break": "grey", 0: "green" }
