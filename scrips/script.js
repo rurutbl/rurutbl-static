@@ -37,7 +37,7 @@ async function app() {
             const reportTime = Object.keys(nextday).toSorted()[0]
 
             const circp = new circularTimer()
-            circp.setTitle(`Report on ${_nextDayList || dayName[0]} by ${reportTime}`)
+            circp.setTitle(`Report on ${shortDayName[_nextI] || shortDayName[0]} by ${reportTime}`)
                 .setSubtitle(`First lesson is ${nextday[reportTime]}`)
 
             updateTrack(nextday, _nextDayList || dayName[0])
@@ -45,12 +45,11 @@ async function app() {
         }
         if (curLessont24 == null) {
             const circp = new circularTimer()
-            circp.setTitle(`idk wait until monday`)
+            circp.setTitle(`idk wait until Mon`)
 
             updateTrack({})
             return
         }
-
         if (curLessont24.toString() !== lastRegLesson) updateTrack(dayList, dayName[_dayI])
         lastRegLesson = curLessont24.toString()
 

@@ -27,7 +27,7 @@ function updateDebug(curDate, curLessont24, lessonJson, semstart, weekNumber) {
     const debugJson = {
         "Date": `${curDate.getMonth() + 1}/${curDate.getDate()}/${curDate.getFullYear()} ${curDate.getHours()}:${curDate.getMinutes()}:${curDate.getSeconds()}`,
         "Stated Day": dayName[curDate.getDay()],
-        "Actual Day (from Sun)": curDate.getDay(),
+        "Actual Day (from Sun)": `${shortDayName[curDate.getDay()]} (${curDate.getDay()})`,
         "Subj": curLessont24 ? lessonJson[curLessont24.toString()] : `Cant detect`,
         "Week count from": semstart,
         "Week Num": weekNumber,
