@@ -112,22 +112,23 @@ function assignColor(percentage) {
     if (percentage >= 60) return "#F00"
 }
 
-//! Variables
-document.loopingOn = true
-var lastRegLesson = null
-
-// const _timeDifference = curDate.getTime() - semstart.getTime();
-const weekNumber = 1 //Math.ceil(_timeDifference / millisecondsPerWeek);
-const dbStore = new db()
-const settings = dbStore.get()
-document.listUrl = `/classes/${settings.class.level}/${settings.class.class}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`
 
 //! Config
 let _spoofDay
-let semstart = "Disabled"// new Date('2024-1-3');
+let semstart = new Date('2024-3-17');
 
 //! Static refrences
 const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
 const shortDayName = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
 const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
 const colorAssign = { "Recess": "grey", "Break": "grey", 0: "green" }
+
+//! Variables
+document.loopingOn = true
+var lastRegLesson = null
+
+var _timeDifference = returnDate().getTime() - semstart.getTime();
+var weekNumber = Math.ceil(_timeDifference / millisecondsPerWeek)
+var dbStore = new db()
+var settings = dbStore.get()
+document.listUrl = `/classes/${settings.class.level}/${settings.class.class}/${weekNumber % 2 == 0 ? "even" : "odd"}.json`

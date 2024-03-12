@@ -7,8 +7,8 @@ async function app() {
     weekList = await fetch(document.listUrl)
     weekList = await weekList.json()
 
-    const getCommonRecess = await fetch("/api/getCommonRecess.json")
-    const getCommonBreak = await fetch("/api/getCommonBreak.json")
+    const getCommonRecess = await fetch(`/api/getCommonRecess${weekNumber % 2 == 0 ? "Even" : "Odd"}.json`)
+    const getCommonBreak = await fetch(`/api/getCommonBreak${weekNumber % 2 == 0 ? "Even" : "Odd"}.json`)
     var getCommon = {}
     getCommon["Recess"] = await getCommonRecess.json()
     getCommon["Break"] = await getCommonBreak.json()

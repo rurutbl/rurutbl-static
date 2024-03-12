@@ -1,0 +1,51 @@
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "Eng",
+        "0940": "MTL",
+        "1040": "Recess",
+        "1120": "Elect-POA/NFS/Art[3C]",
+        "1220": "Math",
+        "1320": null
+    },
+    "Tuesday": {
+        "0800": "ica etnSci(Phy/Bio) [BA/3C/3E/4A/ery",
+        "0900": "Math",
+        "1000": "MTL",
+        "1040": "Recess",
+        "1120": "Comb Hum",
+        "1220": "Chemistry",
+        "1300": "PE",
+        "1400": null
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "Comb.SS",
+        "1040": "Eng",
+        "1120": "Recess",
+        "1200": "Chemistry",
+        "1300": "Elect-POA/NFS/Art[3C]",
+        "1400": null
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "Science(NT)/Sci(Phy/Bio) [3A/",
+        "0920": "MTL",
+        "1000": "Math",
+        "1040": "Recess",
+        "1120": "Eng",
+        "1220": "PE",
+        "1420": null,
+        "1320": "Elect-POA/NFS/Art[3C]"
+    },
+    "Friday": {
+        "0840": "Math (HBL)",
+        "0940": null,
+        "1000": "MTL (HBL)",
+        "1100": "Chemistry",
+        "1120": "NT)/Sci(P| hy/Bio) |",
+        "1140": "SS (HBL)",
+        "1220": "Humanities (Upperelvan",
+        "1300": null
+    }
+}

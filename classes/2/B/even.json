@@ -1,0 +1,51 @@
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "Geog (Sec 2 TG 1 to 3)/CPA(TG4)",
+        "1000": "Math (TG 1 to 4)",
+        "1100": "Recess",
+        "1140": "MTL (TG 1 to 4)",
+        "1220": "EL (TG 1 to 4)",
+        "1300": "Sci (TG 1 to 4)",
+        "1400": null
+    },
+    "Tuesday": {
+        "0800": "Math (TG 1 to 4)",
+        "0900": "PE",
+        "1000": "LS-FCE",
+        "1100": "Recess",
+        "1140": "EL (TG 1 to 4)",
+        "1240": "MTL (TG 1 to 4)",
+        "1420": null,
+        "1340": "Sci (TG 1 to 4)"
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "PE",
+        "1040": "MTL (TG 1 to 4)",
+        "1120": "Recess",
+        "1200": "Hist (Sec 2 TG 1 to 3)/CPA(TG 4)",
+        "1300": "Lit (Sec 2 TG 1 to 3)/SS (TG4)",
+        "1400": null
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "LS-Music",
+        "0940": "EL (TG 1 to 4)",
+        "1020": "Recess",
+        "1100": "LS-FCE",
+        "1140": "LS-Art",
+        "1240": "Sci (TG 1 to 4)",
+        "1320": "Math (TG 1 to 4)",
+        "1400": null
+    },
+    "Friday": {
+        "0840": "Math (HBL)",
+        "0940": null,
+        "1000": "MTL (HBL)",
+        "1100": "LS-Sci (HBL)",
+        "1140": "Geo/CPA (HBL)",
+        "1220": "History (HBL)",
+        "1300": null
+    }
+}

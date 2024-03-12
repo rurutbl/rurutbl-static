@@ -1,0 +1,51 @@
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "PE",
+        "1000": "Recess",
+        "1040": "Eng",
+        "1140": "Math",
+        "1220": "Science(NT)/Sci(Phy/Bio) [3A/",
+        "1300": "MTL",
+        "1340": null
+    },
+    "Tuesday": {
+        "0800": "Elect-AM/D&1T/POA [3BAB&4H]",
+        "0900": "Recess",
+        "0940": "Elect-D&T(NT)/Science(NT)Sci(Chem) [3A/4A/4B]",
+        "1040": "PE",
+        "1140": "Eng",
+        "1220": "Comb Hum",
+        "1420": null,
+        "1320": "Math"
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "Elect-AM/D&T/POA [3BA4B&4H]",
+        "1040": "Recess",
+        "1120": "MTL",
+        "1220": "Math",
+        "1320": "Science(NT)/Sci(Chem) [3A/4A/",
+        "1400": null
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "MTL",
+        "0920": "Elect-AM/D&T/POA [3B/AB&4H]",
+        "1020": "ilarSci(Phy/Bio) [BA/3C/3F/4A/eta",
+        "1120": "Recess",
+        "1200": "Eng",
+        "1240": "Comb.SS",
+        "1340": null
+    },
+    "Friday": {
+        "0840": "Math (HBL)",
+        "0940": null,
+        "1000": "MTL (HBL)",
+        "1100": "NT)/Sci(Phy/Bio)",
+        "1120": "Science(NT)/Sci(C",
+        "1140": "SS (HBL)",
+        "1220": "Humanities (Upperelvan",
+        "1300": null
+    }
+}

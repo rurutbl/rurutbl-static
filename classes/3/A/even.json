@@ -1,0 +1,51 @@
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "Elect-D&T(NT)/Science(NT)/Sci(Chem) [3A/4A/4B]",
+        "1000": "CPA",
+        "1100": "Recess",
+        "1140": "Math",
+        "1240": "Eng",
+        "1420": null,
+        "1320": "EBS"
+    },
+    "Tuesday": {
+        "0800": "ica etnSci(Phy/Bio) [BA/3C/3E/4A/ery",
+        "0900": "Math",
+        "1000": "Eng",
+        "1100": "Recess",
+        "1140": "CPA",
+        "1240": "SS (NT)",
+        "1420": null,
+        "1340": "MTL"
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "Recess",
+        "1020": "Eng",
+        "1100": "Science(NT)/Sci(Chem) [3A/4A/",
+        "1140": "Math",
+        "1220": "PE",
+        "1420": null,
+        "1320": "MTL"
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "Science(NT)/Sci(Phy/Bio) [3A/",
+        "0920": "Recess",
+        "1000": "CPA",
+        "1100": "PE",
+        "1200": "Math",
+        "1240": "MTL",
+        "1420": null,
+        "1320": "EBS"
+    },
+    "Friday": {
+        "0840": "Math (HBL)",
+        "0940": null,
+        "1000": "MTL (HBL)",
+        "1100": "Science(NT)/Sci(C",
+        "1120": "NT)/Sci(P| hy/Bio) |",
+        "1140": null
+    }
+}

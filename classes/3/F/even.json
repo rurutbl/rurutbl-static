@@ -1,0 +1,56 @@
+{
+    "Monday": {
+        "0800": "CCE",
+        "0900": "Math",
+        "1000": "Comb Hum",
+        "1100": "Recess",
+        "1140": "PE",
+        "1240": "Break",
+        "1300": "Comb.SS",
+        "1400": "Elect-Com [3F]",
+        "1500": null
+    },
+    "Tuesday": {
+        "0800": "Science(NT)/Sci(Phy/Bio) [3A/3C/3F/4A/",
+        "0900": "Recess",
+        "0940": "Math",
+        "1040": "Eng",
+        "1140": "MTL",
+        "1220": "Elect-POA/D&T [3H3F]",
+        "1320": "PE",
+        "1420": null
+    },
+    "Wednesday": {
+        "0840": "CCE",
+        "0940": "Eng",
+        "1020": "Chemistry",
+        "1120": "Recess",
+        "1200": "Elect-POA/D&T [3H3F]",
+        "1300": "Break",
+        "1320": "Elect-Com [3F]",
+        "1420": "MTL",
+        "1600": null,
+        "1500": "MTL-HCL"
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "Science(NT)/Sci(Phy/Bio) [3A/",
+        "0920": "Eng",
+        "1000": "Recess",
+        "1040": "Chemistry",
+        "1120": "Elect-Com [3F]",
+        "1220": "MTL",
+        "1320": "Elect-POA/D&T |3H/3F]",
+        "1420": null
+    },
+    "Friday": {
+        "0840": "Math (HBL)",
+        "0940": null,
+        "1000": "MTL (HBL)",
+        "1100": "Chemistry",
+        "1120": "NT)/Sci(Phy/",
+        "1140": "SS (HBL)",
+        "1220": "Humanities(Upper Sec)",
+        "1300": null
+    }
+}
