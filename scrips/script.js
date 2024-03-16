@@ -148,7 +148,7 @@ async function app() {
                             rangein.classList.add("rangein")
                             // rangein.style.width = (classes.length / 13) * 80 + "%"
                             rangein.style.backgroundColor = assignColor((classes.length / 13) * 100)
-                            rangein.innerText = `${classes.length}` //(${classes.join(", ")})`
+                            rangein.innerText = `${classes.length}: ${classes.join(", ")}`
 
                             rangeout.append("Crowdedness")
                             rangeout.appendChild(rangein)

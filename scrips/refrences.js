@@ -108,7 +108,7 @@ function getCook(cookiename) {
 }
 function assignColor(percentage) {
     if (percentage <= 30) return "#0a0"
-    if (percentage <= 60 && percentage >= 30) return "#FFC107"
+    if (percentage <= 60 && percentage >= 30) return "#FF9800"
     if (percentage >= 60) return "#F00"
 }
 

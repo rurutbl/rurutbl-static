@@ -4,232 +4,228 @@
 @import url("./skeli.css");
 
 :root {
-  --color-bg: #222;
-  --color-txt: #fff;
-  --color-grey: #9799a0;
+	--color-bg: #222;
+	--color-txt: #fff;
+	--color-grey: #9799a0;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-txt);
+	background: var(--color-bg);
+	color: var(--color-txt);
 
-  font-family: sans-serif;
+	font-family: sans-serif;
 
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 
-  margin: 0px;
-  width: 100vw;
-  overflow-x: hidden;
+	margin: 0px;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 body > a {
-  width: 100%;
-  text-align: center;
-  color: #d84;
+	width: 100%;
+	text-align: center;
+	color: #d84;
 }
 
 /* Track */
 #track,
 #btime {
-  padding: 24px 0px;
-  margin: 15px 0px;
+	padding: 24px 0px;
+	margin: 15px 0px;
 
-  border-radius: 15px;
-  min-width: min(600px, 100vw);
+	border-radius: 15px;
+	min-width: min(600px, 100vw);
 }
 
 #track > li::marker {
-  content: none;
+	content: none;
 }
 
 .subjLi {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
 
-  padding: 10px;
-  margin: 10px 20px;
+	padding: 10px;
+	margin: 10px 20px;
 
-  border-radius: 12px;
-  border: var(--color-grey) solid 1px;
+	border-radius: 12px;
+	border: var(--color-grey) solid 1px;
 }
 
 .subjLi > div {
-  max-width: 200px;
+	max-width: 200px;
 }
 
 .subjLi > div.rangeout {
-  max-width: unset;
+	max-width: unset;
 }
 
 .endLi {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  height: 0;
-  margin: 1.5rem 20px 0.5rem 20px;
-  border-top: thin solid var(--color-grey);
+	height: 0;
+	margin: 1.5rem 20px 0.5rem 20px;
+	border-top: thin solid var(--color-grey);
 }
 
 .endLi > span {
-  color: var(--color-grey);
-  padding: 2px 4px;
-  background: var(--color-bg);
+	color: var(--color-grey);
+	padding: 2px 4px;
+	background: var(--color-bg);
 }
 
 li.active {
-  outline: white 1px solid;
+	outline: white 1px solid;
 }
 
 .rangeout {
-  width: 100%;
-  height: 20px;
+	width: 100%;
+	height: 20px;
 
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .rangein {
-  width: 20px;
-  height: 100%;
+	padding: 0px 10px;
+	height: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
 
-  margin: 0 5px;
-  font-size: 13px;
-  text-wrap: balance;
-  border-radius: 25px;
+	margin: 0 5px;
+	font-size: 13px;
+	text-wrap: balance;
+	border-radius: 25px;
 }
 
 /* Progress Bar */
 
 .progress-bar-container {
-  height: 85vw;
-  width: 85vw;
-  max-height: 300px;
-  max-width: 300px;
+	height: 85vw;
+	width: 85vw;
+	max-height: 300px;
+	max-width: 300px;
 
-  margin: 21px;
+	margin: 21px;
 }
 
 .progress-bar {
-  background: radial-gradient(
-      closest-side,
-      var(--color-bg) 92%,
-      transparent 80% 100%
-    ),
-    conic-gradient(rgb(255, 255, 255) calc(var(--prog) * 1%), grey 0);
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+	background: radial-gradient(closest-side, var(--color-bg) 92%, transparent 80% 100%),
+		conic-gradient(rgb(255, 255, 255) calc(var(--prog) * 1%), grey 0);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .progress-bar > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
 }
 
 /* Debug */
 #devinfo {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 #devinfo > div {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
 }
 
 /* Full Table */
 table {
-  border-collapse: collapse;
-  width: 800px;
+	border-collapse: collapse;
+	width: 800px;
 }
 
 table > tr:nth-child(odd) {
-  background-color: #333;
+	background-color: #333;
 }
 
 #table > div {
-  max-width: 100%;
-  overflow-x: scroll;
-  padding: 30px 0;
+	max-width: 100%;
+	overflow-x: scroll;
+	padding: 30px 0;
 }
 
 td,
 th {
-  text-align: center;
-  padding: 8px;
-  border: var(--color-grey) solid 1px;
+	text-align: center;
+	padding: 8px;
+	border: var(--color-grey) solid 1px;
 }
 
 td {
-  font-size: 0.7em;
-  color: #ffffffaa;
+	font-size: 0.7em;
+	color: #ffffffaa;
 }
 /* Dropdowns */
 .dropdown-parent {
-  width: 100vw;
+	width: 100vw;
 }
 
 .dropdown {
-  border-top: var(--color-grey) solid 1px;
-  border-bottom: var(--color-grey) solid 1px;
+	border-top: var(--color-grey) solid 1px;
+	border-bottom: var(--color-grey) solid 1px;
 
-  width: -webkit-fill-available;
-  padding: 10px;
+	width: -webkit-fill-available;
+	padding: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  cursor: pointer;
+	cursor: pointer;
 }
 
 p.dropdown::before {
-  font-family: "Material Symbols Outlined";
-  margin-right: 10px;
-  content: "\e5cc";
+	font-family: "Material Symbols Outlined";
+	margin-right: 10px;
+	content: "\e5cc";
 }
 
 p.dropdown.active::before {
-  content: "\e5cf";
+	content: "\e5cf";
 }
 
 /* Settings */
 
 #classTitle {
-  margin-top: 40px;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
+	margin-top: 40px;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
 }
 
 #classTitle > a {
-  color: var(--color-txt);
-  font-size: inherit;
-  text-decoration: none;
+	color: var(--color-txt);
+	font-size: inherit;
+	text-decoration: none;
 }
 
 #classTitle > a::after {
-  font-family: "Material Symbols Outlined";
-  content: "\e8b8";
-  margin-left: 10px;
+	font-family: "Material Symbols Outlined";
+	content: "\e8b8";
+	margin-left: 10px;
 }
