@@ -1,50 +1,50 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "Recess",
-        "0940": "PE",
-        "1040": "Sci (TG 5 to 8)",
-        "1140": "MTL (TG 5 to 8)",
-        "1220": "Math (TG 5 to 8)",
+        "0900": "MTL (TG 5 to 8)",
+        "0940": "Recess",
+        "1020": "LS-Art",
+        "1120": "LS-FCE",
+        "1220": "EL(TG 5 to 8)",
         "1320": "Break",
         "1440": null,
-        "1340": "EL(TG 5 to 8)"
+        "1340": "Sci (TG 5 to 8)"
     },
     "Tuesday": {
-        "0800": "Lit (Sec 2 TG 5 to 7)/S5 (TG8)",
-        "0900": "Recess",
-        "0940": "LS-FCE",
+        "0800": "Math (TG 5 to 8)",
+        "0900": "Sci (TG 5 to 8)",
+        "1000": "Recess",
         "1040": "EL (TG 5 to 8)",
-        "1120": "MTL (TG 5 to 8)",
-        "1220": "Math (TG 5 to 8)",
-        "1320": "Sci (TG 5 to 8)",
+        "1120": "Hist (Sec 2 TG 5 to 7)/CPA(TG 8)",
+        "1220": "Lit (Sec 2 TG 5 to 7)/SS (TG8)",
+        "1320": "MTL(TG 5 to 8)",
         "1420": null
     },
     "Wednesday": {
         "0840": "CCE",
         "0940": "Recess",
         "1020": "EL(TG 5 to 8)",
-        "1100": "Sci (TG 5 to 8)",
-        "1200": "LS-Music",
-        "1300": "Geog (Sec 2 TG 5 to 7)/CPA(TG 8)",
+        "1100": "Geog (Sec 2 TG 5 to 7)/CPA(TG 8)",
+        "1200": "Math (TG 5 to 8)",
+        "1300": "Sci (TG 5 to 8)",
         "1400": null
     },
     "Thursday": {
         "0800": "CCE",
-        "0840": "LS-Art",
-        "0940": "LS-FCE",
-        "1020": "PE",
-        "1120": "Recess",
-        "1200": "EL (TG 5 to 8)",
-        "1300": "MTL (TG 5 to 8)",
-        "1340": "Math (TG 5 to 8)",
+        "0840": "PE",
+        "0940": "MTL(TG 5 to 8)",
+        "1020": "Recess",
+        "1100": "LS-FCE",
+        "1140": "LS-Music",
+        "1240": "Math (TG 5 to 8)",
+        "1320": "EL (TG 5 to 8)",
         "1420": null
     },
     "Friday": {
-        "0840": "Math (TG 5 to 8)",
-        "0940": "Hist (Sec 2 TG 5 to 7)/CPA(TG 8)",
+        "0840": "MTL (TG 5 to 8)",
+        "0940": "PE",
         "1040": "Recess",
-        "1120": "MTL (TG 5 to 8)",
+        "1120": "Math (TG 5 to 8)",
         "1220": null
     }
 }

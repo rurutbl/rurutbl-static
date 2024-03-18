@@ -6,8 +6,8 @@
         "1100": "Recess",
         "1140": "PE",
         "1240": "Break",
-        "1300": "Comb.SS",
-        "1400": "Elect-Com [3F]",
+        "1300": "Social Studies",
+        "1400": "Elect-Com",
         "1500": null
     },
     "Tuesday": {
@@ -16,7 +16,7 @@
         "0940": "Math",
         "1040": "Eng",
         "1140": "MTL",
-        "1220": "Elect-POA/D&T [3H3F]",
+        "1220": "Elect-POA/D&T",
         "1320": "PE",
         "1420": null
     },
@@ -25,9 +25,9 @@
         "0940": "Eng",
         "1020": "Chemistry",
         "1120": "Recess",
-        "1200": "Elect-POA/D&T [3H3F]",
+        "1200": "Elect-POA/D&T",
         "1300": "Break",
-        "1320": "Elect-Com [3F]",
+        "1320": "Elect-Com",
         "1420": "MTL",
         "1600": null,
         "1500": "MTL-HCL"
@@ -38,16 +38,16 @@
         "0920": "Eng",
         "1000": "Recess",
         "1040": "Chemistry",
-        "1120": "Elect-Com [3F]",
+        "1120": "Elect-Com",
         "1220": "MTL",
-        "1320": "Elect-POA/D&T |3H/3F]",
+        "1320": "Elect-POA/D&T 3H/3F]",
         "1420": null
     },
     "Friday": {
         "0840": "Math (HBL)",
         "0940": null,
         "1000": "MTL (HBL)",
-        "1100": "Chemistry",
+        "1100": "*Sci(Chem)",
         "1120": "NT)/Sci(Phy/",
         "1140": "SS (HBL)",
         "1220": "Humanities(Upper Sec)",

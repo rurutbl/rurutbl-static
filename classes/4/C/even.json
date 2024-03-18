@@ -2,7 +2,7 @@
     "Monday": {
         "0800": "CCE",
         "0900": "PE",
-        "1000": "Elect-Art/POA [4C]",
+        "1000": "Elect-Art/POA",
         "1100": "Recess",
         "1140": "Math",
         "1220": "Chemistry",
@@ -14,7 +14,7 @@
         "0900": "Eng",
         "0940": "PE",
         "1040": "Recess",
-        "1120": "Elect-Art/POA [4C]",
+        "1120": "Elect-Art/POA",
         "1220": "Comb Hum",
         "1420": null,
         "1320": "Math"
@@ -32,8 +32,8 @@
         "0840": "MTL",
         "0920": "{SciElec}",
         "1000": "Recess",
-        "1040": "Elect-Art/POA [4C]",
-        "1140": "Comb.SS",
+        "1040": "Elect-Art/POA",
+        "1140": "Social Studies",
         "1240": "Eng",
         "1420": null,
         "1320": "Chemistry"
@@ -42,7 +42,7 @@
         "0840": "Math (HBL)",
         "0940": null,
         "1000": "MTL (HBL)",
-        "1100": "Chemistry",
+        "1100": "*Sci(Chem)",
         "1120": "{SciElec}",
         "1140": "SS (HBL)",
         "1220": "Humanities (Upperelvan",

@@ -1,50 +1,50 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "Recess",
-        "0940": "Math (TG 1 to 4)",
-        "1040": "Hist/G1 Humanities (TG 1to 4)",
-        "1140": "Sci (TG 1 to 4)",
-        "1240": "MTL (TG 1 to 4)",
-        "1320": "EL (TG 1 to 4)",
-        "1400": "Break",
-        "1540": null,
-        "1440": "Lit (TG 1 to 3)"
+        "0900": "Hist/G1 Humanities (TG1to 4)",
+        "1000": "Math (TG 1 to 4)",
+        "1040": "Recess",
+        "1120": "MTL (TG 1 to 4)",
+        "1220": "EL (TG 1 to 4)",
+        "1300": "PE",
+        "1400": null
     },
     "Tuesday": {
-        "0800": "Sci (TG 1 to 4)",
-        "0900": "MTL (TG 1 to 4)",
-        "0940": "Math (TG 1 to 4)",
-        "1040": "Recess",
-        "1120": "PE",
-        "1220": "LS-D&T",
-        "1300": "EL (TG 1 to 4)",
+        "0800": "MTL (TG 1 to 4)",
+        "0840": "EL (TG 1 to 4)",
+        "0920": "Recess",
+        "1000": "Sci (TG 1 to 4)",
+        "1100": "LS-Art",
+        "1200": "LS-Music",
+        "1300": "PE",
         "1400": null
     },
     "Wednesday": {
         "0840": "CCE",
-        "0940": "EL (TG 1 to 4)",
-        "1020": "Recess",
-        "1100": "MTL (TG 1 to 4)",
-        "1200": "Math (TG 1 to 4)",
-        "1300": "LS-Music",
-        "1400": null
+        "0940": "Recess",
+        "1020": "MTL (TG 1 to 4)",
+        "1100": "Math (TG 1 to 4)",
+        "1200": "Geog/G1 Humanities(TG 1 to 4)",
+        "1300": "EL(TG 1 to 4)",
+        "1400": "Break",
+        "1520": null,
+        "1420": "Lit (TG 1 to 3)"
     },
     "Thursday": {
         "0800": "CCE",
-        "0840": "LS-Art",
-        "0940": "MTL (TG 1 to 4)",
-        "1040": "Math (TG 1 to4)",
-        "1120": "Recess",
-        "1200": "PE",
-        "1300": "LS-D&T",
+        "0840": "MTL (TG 1 to 4)",
+        "0940": "Recess",
+        "1020": "EL(TG 1 to 4)",
+        "1120": "Math (TG 1 to 4)",
+        "1220": "Sci (TG 1 to 4)",
+        "1320": "LS-D&T",
         "1400": null
     },
     "Friday": {
-        "0840": "Geog/G1 Humanities(TG 1 to 4)",
-        "0940": "Recess",
-        "1020": "Sci (TG 1 to 4)",
-        "1120": "EL (TG 1 to 4)",
+        "0840": "Math (TG 1 to 4)",
+        "0940": "Sci (TG 1 to 4)",
+        "1040": "Recess",
+        "1120": "LS-D&T",
         "1220": null
     }
 }

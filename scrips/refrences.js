@@ -115,7 +115,7 @@ function assignColor(percentage) {
 
 //! Config
 let _spoofDay
-let semstart = new Date('2024-3-17');
+let semstart = new Date('2024-3-15');
 
 //! Static refrences
 const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
@@ -128,7 +128,7 @@ document.loopingOn = true
 var lastRegLesson = null
 
 var _timeDifference = returnDate().getTime() - semstart.getTime();
-var weekNumber = 1//Math.ceil(_timeDifference / millisecondsPerWeek)
+var weekNumber = Math.ceil(_timeDifference / millisecondsPerWeek)
 var dbStore = new db()
 var settings = dbStore.get()
 document.listUrl = `/classes/${settings.class.level}/${settings.class.class}/${weekNumber % 2 == 0 && weekNumber > 0 ? "even" : "odd"}.json`

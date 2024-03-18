@@ -1,52 +1,51 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "CPA",
-        "1000": "Recess",
-        "1040": "Math",
-        "1120": "Eng",
-        "1200": "MTL",
-        "1240": "Break",
-        "1300": "Science(NT)/Sci( Phy/Bio)eS Bese Ne ote: aa aa",
-        "1500": null,
-        "1400": "EBS"
-    },
-    "Tuesday": {
-        "0800": "CPA",
-        "0900": "Eng",
-        "1000": "SS (NT)",
+        "0900": "Sci(Phy/Bio) [3A/3C/3F/4A/ee",
+        "1000": "CPA",
         "1100": "Recess",
         "1140": "Math",
+        "1240": "Break",
+        "1300": "Eng",
+        "1440": null,
+        "1340": "EBS"
+    },
+    "Tuesday": {
+        "0800": "Mra 4. eySci(Phy/Bio) [3A/3C/3F/4A/pe",
+        "0900": "Recess",
+        "0940": "SS (NT)",
+        "1040": "Eng",
+        "1140": "Math",
         "1240": "PE",
-        "1340": "MTL",
-        "1440": null
+        "1440": null,
+        "1340": "MTL"
     },
     "Wednesday": {
         "0840": "CCE",
-        "0940": "Math",
+        "0940": "MTL",
         "1020": "Recess",
-        "1100": "PE",
-        "1200": "Eng",
-        "1240": "Break",
-        "1300": "Science(NT)/Sci(Chem)5m: Hun cn lin wat",
-        "1400": "MTL",
-        "1440": null
+        "1100": "Eng",
+        "1200": "Elect-D&T(NT)/Science(NT)/Sci(Chem)",
+        "1300": "CPA",
+        "1440": null,
+        "1400": "Math"
     },
     "Thursday": {
         "0800": "CCE",
         "0840": "CPA",
-        "0940": "Science(NT)/Sci(Phy/Bio)teenie Wat ee epee",
-        "1040": "Recess",
-        "1120": "Eng",
-        "1220": "Math",
+        "0940": "MTL",
+        "1020": "Recess",
+        "1100": "PE",
+        "1200": "Eng",
+        "1240": "Math",
         "1320": "EBS",
         "1420": null
     },
     "Friday": {
-        "0840": "Math",
+        "0840": "MTL",
         "0940": "Recess",
-        "1020": "Science(NT)/Sci(Chem)",
-        "1120": "MTL",
+        "1020": "Elect-D&T(NT)/Science(NT)/Sci(Chem)",
+        "1120": "Math",
         "1220": null
     }
 }

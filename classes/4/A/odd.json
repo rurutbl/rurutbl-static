@@ -1,53 +1,53 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "PE",
+        "0900": "Math",
         "1000": "Recess",
-        "1040": "Math",
-        "1120": "CPA",
-        "1220": "Science(NT)/Sci(Chem) [3A/4A/",
-        "1320": "Break",
-        "1340": "Eng",
-        "1420": "MTL",
-        "1620": null,
-        "1500": "EBS"
+        "1040": "Eng",
+        "1140": "CPA",
+        "1240": "Science(NT)/Sci(Chem)Sie wie cscs",
+        "1340": "Break",
+        "1400": "MTL",
+        "1600": null,
+        "1440": "EBS"
     },
     "Tuesday": {
-        "0800": "Science(NT)/Sci(Phy/Bio) [3A/3C/3F/4A/",
+        "0800": "PE",
         "0900": "Recess",
-        "0940": "CPA",
-        "1040": "Eng",
-        "1120": "Math",
-        "1220": "MTL",
+        "0940": "Eng",
+        "1020": "CPA",
+        "1120": "Science(NT)/Sci(Chem)eae eres ewe",
+        "1220": "Math",
         "1300": "EBS",
         "1420": null
     },
     "Wednesday": {
         "0840": "CCE",
-        "0940": "Math",
-        "1020": "Eng",
+        "0940": "Science(NT)/Sci(Phy/ant uih. down, tmauiteaw Kiam tmeek",
+        "1040": "Math",
         "1120": "Recess",
-        "1200": "MTL",
-        "1300": "Break",
-        "1320": "Science(NT)/Sci(Phy/Bio) [34/3C/3F/4A/",
-        "1420": "EBS",
-        "1540": null
+        "1200": "Eng",
+        "1240": "Ss (NT)",
+        "1340": "MTL",
+        "1420": "Break",
+        "1600": null,
+        "1440": "EBS"
     },
     "Thursday": {
         "0800": "CCE",
-        "0840": "PE",
-        "0940": "Recess",
-        "1020": "Math",
-        "1120": "Science(NT)/Sci(Chem) [3A/4A/",
-        "1220": "SS (NT)",
+        "0840": "Eng",
+        "0940": "PE",
+        "1040": "Recess",
+        "1120": "Science(NT)/Sci(Phy/OP ee eee aa",
+        "1220": "Math",
         "1320": "MTL",
         "1420": null
     },
     "Friday": {
-        "0840": "CPA",
+        "0840": "Math",
         "0940": "Recess",
-        "1020": "Math",
-        "1120": "Eng",
+        "1020": "MTL",
+        "1120": "CPA",
         "1220": null
     }
 }

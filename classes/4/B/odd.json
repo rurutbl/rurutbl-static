@@ -1,51 +1,33 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "Elect-AM/D&T/POA",
-        "1000": "Recess",
-        "1040": "Eng",
-        "1120": "PE",
-        "1220": "Science(NT)/Sci((Chem)",
-        "1320": "Comb Hum",
-        "1400": "Break",
-        "1500": null,
-        "1420": "MTL"
+        "0900": "Recess",
+        "0940": "MTL",
+        "1040": "Math",
+        "1140": "Social Studies",
+        "1240": "Science(NT)/Sci(Chem)Soe i",
+        "1340": "Eng",
+        "1420": null
     },
     "Tuesday": {
-        "0800": "Science(NT)/Sci(Phy/Bio)",
-        "0900": "Elect-AM/D&1T/POA",
-        "1000": "Eng",
-        "1040": "Recess",
-        "1120": "PE",
+        "0800": "Elect-AM/D&T/POA",
+        "0900": "MTL",
+        "0940": "Recess",
+        "1020": "Math",
+        "1120": "Science(NT)/Sci(Chem)peek ware mueke:",
         "1220": "Social Studies",
-        "1320": "Math",
+        "1300": "Comb Hum",
+        "1340": "Eng",
         "1420": null
     },
     "Wednesday": {
         "0840": "CCE",
-        "0940": "Recess",
-        "1020": "Math",
-        "1120": "Eng",
-        "1220": "MTL",
-        "1320": "Science(NT)/Sci(Phy/Bio)",
-        "1420": null
-    },
-    "Thursday": {
-        "0800": "CCE",
-        "0840": "Comb Hum",
-        "0940": "Recess",
-        "1020": "Eng",
-        "1120": "Science(NT)/Sci(Chem)",
-        "1220": "Social Studies",
-        "1300": "Math",
-        "1340": "MTL",
-        "1420": null
-    },
-    "Friday": {
-        "0840": "Elect-AM/D&T/POA",
-        "0940": "Recess",
-        "1020": "MTL",
-        "1120": "Math",
-        "1220": null
-    }
-}
+        "0940": "Science(NT)/Sci(Phy/Bio)�eDen ptm es tonal tiem tment",
+        "1040": "Recess",
+        "1120": "PE",
+        "1220": "Eng",
+        "1320":Breaked", "1340": "MTL", "1500": null, "1420": "Math"}, "Thursday": {"0800": "CCE", "0840": "Math", "0940": "Elect-AM/D&T/POA [
+            3BAB&4H
+        ]", "1040": "Recess", "1120": "Science(NT)/Sci(Phy/Bio)gece Bocce ace alr", "1220": "MTL", "1320": "Eng", "1420": null}, "Friday": {"0840": "Elect-AM/D&T/POA [
+            3B4B&4H
+        ]", "0940": "PE", "1040": "Recess", "1120": "Comb Hum", "1220": null}}

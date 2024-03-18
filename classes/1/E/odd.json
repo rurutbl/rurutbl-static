@@ -2,50 +2,49 @@
     "Monday": {
         "0800": "CCE",
         "0900": "EL (TG 5 to 8)",
-        "0940": "MTL (TG 5 to 8)",
-        "1040": "LS-D&T",
-        "1120": "Recess",
-        "1200": "PE",
+        "1000": "Recess",
+        "1040": "MTL(TG 5 to 8)",
+        "1120": "LS-D&T",
+        "1200": "LS-Art",
         "1300": "Break",
         "1320": "Math (TG 5 to 8)",
-        "1420": null
+        "1520": null,
+        "1420": "Lit (TG 5 to 7)"
     },
     "Tuesday": {
-        "0800": "MTL (TG 5 to 8)",
-        "0900": "Hist/G1 Humanities (TG5 to 8)",
-        "1000": "Recess",
-        "1040": "Math (TG 5 to 8)",
-        "1120": "Sci (TG 5 to 8)",
-        "1220": "EL (TG 5 to 8)",
-        "1300": "LS-Music",
+        "0800": "Hist/G1 Humanities (TG5 to 8)",
+        "0900": "Math (TG 5 to 8)",
+        "1000": "LS-Music",
+        "1100": "Recess",
+        "1140": "MTL (TG 5 to 8)",
+        "1220": "Sci (TG 5 to 8)",
+        "1320": "EL (TG 5 to 8)",
         "1400": null
     },
     "Wednesday": {
         "0840": "CCE",
-        "0940": "MTL(TG 5 to 8)",
-        "1020": "Recess",
-        "1100": "LS-D&T",
-        "1200": "PE",
-        "1300": "EL(TG 5 to 8)",
-        "1400": "Break",
-        "1520": null,
-        "1420": "Lit (TG 5 to 7)"
+        "0940": "EL (TG 5 to 8)",
+        "1020": "LS-D&T",
+        "1120": "Recess",
+        "1200": "MTL (TG 5 to 8)",
+        "1300": "PE",
+        "1400": null
     },
     "Thursday": {
         "0800": "CCE",
         "0840": "Sci (TG 5 to 8)",
         "0940": "Recess",
-        "1020": "Geog/G1 Humanities(TG 5 to 8)",
-        "1120": "Math (TG 5 to 8)",
-        "1220": "MTL(TG 5 to 8)",
-        "1300": "EL(TG 5 to 8)",
+        "1020": "MTL (TG 5 to 8)",
+        "1120": "Geog/G1 Humanities(TG 5 to 8)",
+        "1220": "PE",
+        "1320": "Math (TG 5 to 8)",
         "1400": null
     },
     "Friday": {
-        "0840": "Sci (TG 5 to 8)",
-        "0940": "Math (TG 5 to 8)",
-        "1040": "Recess",
-        "1120": "LS-Art",
+        "0840": "EL (TG 5 to 8)",
+        "0940": "Recess",
+        "1020": "Math (TG 5 to 8)",
+        "1120": "Sci (TG 5 to 8)",
         "1220": null
     }
 }

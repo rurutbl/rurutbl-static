@@ -1,39 +1,50 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0820": "Lit (Sec 2 TG 1 to 3)/SS (TG4)",
-        "0840": "LS-FCE",
-        "0900": "LS-Art",
-        "0940": null,
-        "0920": "Math (TG 1 to 4)"
+        "0900": "Math (TG 1 to 4)",
+        "1000": "Sci (TG 1 to 4)",
+        "1100": "Recess",
+        "1140": "EL(TG 1 to 4)",
+        "1220": "MTL (TG 1 to 4)",
+        "1300": "LS-Art",
+        "1400": null
     },
     "Tuesday": {
         "0800": "PE",
-        "0820": "Sci (TG 1 to 4)",
-        "0840": "Hist (Sec 2 TG 1 to 3)/CPA(TG 4)",
-        "0900": "MTL (TG 1 to 4)",
-        "0940": null,
-        "0920": "EL (TG 1 to 4)"
+        "0900": "EL (TG 1 to 4)",
+        "0940": "Recess",
+        "1020": "LS-FCE",
+        "1120": "Math (TG 1 to 4)",
+        "1220": "MTL (TG 1 to 4)",
+        "1320": "Sci (TG 1 to 4)",
+        "1420": null
     },
     "Wednesday": {
-        "0820": "PE",
-        "0840": "Sci (TG 1 to 4)",
-        "0900": "Math (TG 1 to 4)",
-        "0920": null
-    },
-    "Thursday": {
-        "0800": "EL (TG 1 to 4)",
-        "0820": "Math (TG 1 to 4)",
-        "0840": "MTL (TG 1 to 4)",
-        "0900": "Geog (Sec 2 TG 1 to 3)/CPA(TG4)",
-        "0940": null,
-        "0920": "Sci (TG 1 to 4)"
-    },
-    "Friday": {
-        "0840": "MTL (TG 1 to 4)",
-        "0920": "LS-Music",
+        "0840": "CCE",
+        "0940": "Math (TG 1 to 4)",
         "1020": "LS-FCE",
         "1100": "Recess",
-        "1140": "EL (TG 2 to 4)"
+        "1140": "LS-Music",
+        "1240": "Break",
+        "1300": "MTL (TG 1 to 4)",
+        "1440": null,
+        "1340": "EL (TG 1 to 4)"
+    },
+    "Thursday": {
+        "0800": "CCE",
+        "0840": "Lit (Sec 2 TG 1 to 3)/SS (TG4)",
+        "0940": "Recess",
+        "1020": "Math (TG 1 to 4)",
+        "1120": "PE",
+        "1220": "Geog (Sec 2 TG 1 to 3)/CPA(TG4)",
+        "1320": "Sci (TG 1 to 4)",
+        "1420": null
+    },
+    "Friday": {
+        "0840": "Hist (Sec 2 TG 1 to 3)/CPA(TG 4)",
+        "0940": "Recess",
+        "1020": "MTL (TG 1 to 4)",
+        "1120": "EL (TG 1 to 4)",
+        "1220": null
     }
 }

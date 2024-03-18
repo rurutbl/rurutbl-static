@@ -1,39 +1,35 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0820": "Comb Hum",
-        "0840": "Elect-POA/Art/D&T/NFS[5A]",
-        "0900": "Chemestry",
-        "0920": "Social Studies",
+        "0820": "MTL",
+        "0840": "PE",
+        "0900": "{SciElec}",
+        "0920": "Math",
         "0940": null
     },
     "Tuesday": {
-        "0800": "{SciElec}",
-        "0820": "Eng",
-        "0840": "Elect-POA/Art/D&T/NFS[SA]",
+        "0800": "Elect-POA/Art/D&T",
+        "0820": "MTL",
+        "0840": "Chemistry",
         "0900": "Math",
         "0940": null,
-        "0920": "Chemestry"
+        "0920": "Social Studies"
     },
     "Wednesday": {
-        "0820": "PE",
-        "0840": "MTL",
+        "0820": "Eng",
+        "0840": "{SciElec}",
         "0900": "Math",
         "0920": null
     },
     "Thursday": {
-        "0800": "Math",
-        "0820": "MTL",
+        "0800": "Elect-POA/Art/D&T",
+        "0820": "Chemistry",
         "0840": "Eng",
-        "0900": "{SciElec}",
-        "0940": null,
-        "0920": "Elect-POA/Art/D&T/NFS[SA]"
+        "0900": null
     },
     "Friday": {
-        "0820": "PE",
-        "0940": "Eng",
-        "1020": "Recess",
-        "1100": "Comb Hum",
-        "1140": "Comg.SS"
+        "0820": "Comb Hum",
+        "0840": "Elect-POA/Art/D&T",
+        "0900": null
     }
 }

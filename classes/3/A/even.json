@@ -1,7 +1,7 @@
 {
     "Monday": {
         "0800": "CCE",
-        "0900": "Elect-D&T(NT)/Science(NT)/Sci(Chem) [3A/4A/4B]",
+        "0900": "Elect-D&T(NT)/Science(NT)/Sci(Chem)",
         "1000": "CPA",
         "1100": "Recess",
         "1140": "Math",
@@ -45,7 +45,7 @@
         "0940": null,
         "1000": "MTL (HBL)",
         "1100": "Science(NT)/Sci(C",
-        "1120": "NT)/Sci(P| hy/Bio) |",
+        "1120": "NT)/Sci(Phy/Bio)",
         "1140": null
     }
 }
