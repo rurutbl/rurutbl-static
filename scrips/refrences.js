@@ -115,7 +115,7 @@ function assignColor(percentage) {
 
 //! Config
 let _spoofDay
-let semstart = new Date('2024-3-15');
+let semstart = new Date('2024-3-16');
 
 //! Static refrences
 const dayName = ["Monday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Monday"]
